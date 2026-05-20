@@ -514,7 +514,7 @@
         }
       ],
       "parentLitterId": null,
-      "notes": "",
+      "notes": "Testing github syncing",
       "createdAt": "2026-05-15",
       "activationDate": "2025-06-18",
       "deactivationDate": null,
@@ -973,6 +973,15 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMPEDF79P",
+      "timestamp": "2026-05-20T18:03:59.245Z",
+      "type": "cage_edited",
+      "description": "Edited cage C023 — Notes: \"—\" → \"Testing github syncing\"",
+      "cageIds": [
+        "C023"
+      ]
+    },
     {
       "id": "LOGMPECTSB7",
       "timestamp": "2026-05-20T17:47:20.083Z",
@@ -1927,5 +1936,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-05-20T18:03:26.291Z"
+  "savedAt": "2026-05-20T18:04:11.179Z"
 }
