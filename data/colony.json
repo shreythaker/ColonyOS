@@ -501,7 +501,7 @@
       "id": "C023",
       "strain": "A",
       "sex": "F",
-      "mouseCount": 0,
+      "mouseCount": 1,
       "dob": "2025-05-28",
       "status": "active",
       "hasBreed": false,
@@ -514,7 +514,7 @@
         }
       ],
       "parentLitterId": null,
-      "notes": "github overwrote successfully",
+      "notes": "",
       "createdAt": "2026-05-15",
       "activationDate": "2025-06-18",
       "deactivationDate": null,
@@ -851,7 +851,10 @@
       "numFemales": null,
       "status": "born",
       "offspringCageIds": [],
-      "notes": ""
+      "notes": "",
+      "deleted": true,
+      "deletedReason": "duplicate entry",
+      "deletedAt": "2026-05-20"
     },
     {
       "id": "L014",
@@ -867,7 +870,10 @@
       "numFemales": null,
       "status": "gestating",
       "offspringCageIds": [],
-      "notes": ""
+      "notes": "",
+      "deleted": true,
+      "deletedReason": "duplicate entry",
+      "deletedAt": "2026-05-20"
     }
   ],
   "pairs": [
@@ -899,7 +905,8 @@
       "lastStatusUpdate": "2026-05-20",
       "litterIds": [
         "L007"
-      ]
+      ],
+      "notes": "5/20 - female weight is 34.0 g, looks pregnant but observe."
     },
     {
       "id": "MP003",
@@ -968,10 +975,58 @@
   ],
   "auditLog": [
     {
-      "id": "LOGMPEIB6IW",
-      "timestamp": "2026-05-20T20:20:49.736Z",
+      "id": "LOGMPEIKQGQ",
+      "timestamp": "2026-05-20T20:28:15.482Z",
+      "type": "litter_deleted",
+      "description": "Deleted litter L013: duplicate entry",
+      "cageIds": [
+        "C008",
+        "C005"
+      ]
+    },
+    {
+      "id": "LOGMPEIK9KL",
+      "timestamp": "2026-05-20T20:27:53.589Z",
+      "type": "litter_deleted",
+      "description": "Deleted litter L014: duplicate entry",
+      "cageIds": [
+        "C021",
+        "C013"
+      ]
+    },
+    {
+      "id": "LOGMPEIFWBA",
+      "timestamp": "2026-05-20T20:24:29.782Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP002 — Notes: \"—\" → \"5/20 - female weight is 34.0 g, looks pregnant but observe.\"",
+      "cageIds": [
+        "C020",
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMPEIDTV6",
+      "timestamp": "2026-05-20T20:22:53.298Z",
       "type": "cage_edited",
-      "description": "Edited cage C023 — Notes: \"Testing github sync\" → \"github overwrote successfully\"",
+      "description": "Edited cage C023 — Count: \"0\" → \"1\"",
+      "cageIds": [
+        "C023"
+      ]
+    },
+    {
+      "id": "LOGMPEIC36Y",
+      "timestamp": "2026-05-20T20:21:32.074Z",
+      "type": "cage_edited",
+      "description": "Edited cage C023 — Notes: \"Github successfully overwrote excel\" → \"—\"",
+      "cageIds": [
+        "C023"
+      ]
+    },
+    {
+      "id": "LOGMPEGMR49",
+      "timestamp": "2026-05-20T19:33:50.409Z",
+      "type": "cage_edited",
+      "description": "Edited cage C023 — Notes: \"Testing github sync\" → \"Github successfully overwrote excel\"",
       "cageIds": [
         "C023"
       ]
@@ -1939,5 +1994,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-05-20T20:20:52.047Z"
+  "savedAt": "2026-05-20T20:29:36.445Z"
 }
