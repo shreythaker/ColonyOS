@@ -4,7 +4,7 @@ import {
   Edit2, RefreshCw, AlertCircle, CheckCircle2, FlaskConical,
   Bell, Activity, Zap, BarChart2, GitBranch, Dna,
   Scissors, ArrowUpDown, History, Heart, TrendingDown,
-  Sun, Moon
+  Sun, Moon, Trash2, RotateCcw
 } from "lucide-react";
 import * as XLSX from "xlsx";
 
@@ -1272,6 +1272,33 @@ function BatchDeleteModal({cageIds, onClose, onDelete}) {
   );
 }
 
+function DeleteLitterModal({litter, onClose, onDelete}) {
+  const C = useC();
+  const [reason, setReason] = useState("");
+  const ok = reason.trim().length > 0;
+  return (
+    <Modal title="Delete Litter" onClose={onClose} width={460}>
+      <div style={{display:"flex",flexDirection:"column",gap:14}}>
+        <div style={{padding:12,background:C.danger+"15",border:`1px solid ${C.danger}33`,borderRadius:8,fontSize:13,color:C.txt}}>
+          Litter <strong style={{fontFamily:"monospace"}}>{litter.id}</strong> will be moved to the Deleted tab. It can be restored at any time.
+        </div>
+        <div>
+          <Label>Reason for deletion (required)</Label>
+          <TextArea value={reason} onChange={e=>setReason(e.target.value)} rows={3} style={{width:"100%"}}
+            placeholder="e.g. Data entry error, litter lost, duplicate record…"/>
+        </div>
+        <div style={{display:"flex",justifyContent:"flex-end",gap:10,marginTop:4}}>
+          <button onClick={onClose} style={btn({background:C.surf2,color:C.muted})}>Cancel</button>
+          <button onClick={()=>{if(ok){onDelete(reason.trim());onClose();}}}
+            style={btn({background:C.danger,color:"#fff",opacity:ok?1:.45,cursor:ok?"pointer":"not-allowed"})}>
+            <Trash2 size={14}/>Delete Litter
+          </button>
+        </div>
+      </div>
+    </Modal>
+  );
+}
+
 function Colony({cages, setCages, litters, setLitters, matingPairs, setMatingPairs, auditLog, setAuditLog, archivedLogs, setArchivedLogs, addLog}) {
   const C = useC();
   const [sub,setSub]               = useState("cages");
@@ -1930,6 +1957,7 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
   const [litOpen,setLitOpen]   = useState({A:true,B:true,AB:true});
   const [litSub,setLitSub]     = useState("active");
   const [pairSub,setPairSub]   = useState("active");
+  const [delLit,setDelLit]     = useState(null);
   const liveDate = () => { const n=new Date(); return `${n.getFullYear()}-${_p2(n.getMonth()+1)}-${_p2(n.getDate())}`; };
 
   const addPair = ({pair,litter}) => {
@@ -2000,6 +2028,15 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
     addLog("litter_updated",
       changed.length?`Updated litter ${updated.id} — ${changed.join(" | ")}`:`Updated litter ${updated.id} (no changes)`,
       [updated.motherCageId,updated.fatherCageId]);
+  };
+
+  const deleteLitter = (litter, reason) => {
+    setLitters(ls=>ls.map(l=>l.id===litter.id?{...l,deleted:true,deletedReason:reason,deletedAt:liveDate()}:l));
+    addLog("litter_deleted",`Deleted litter ${litter.id}: ${reason}`,[litter.motherCageId,litter.fatherCageId].filter(Boolean));
+  };
+  const restoreLitter = litter => {
+    setLitters(ls=>ls.map(l=>l.id===litter.id?{...l,deleted:false,deletedReason:null,deletedAt:null}:l));
+    addLog("litter_restored",`Restored litter ${litter.id}`,[litter.motherCageId,litter.fatherCageId].filter(Boolean));
   };
 
   const pCol = s => ({waiting:C.muted,pregnant:C.pink,birthed:C.success,retired:C.muted})[s]||C.muted;
@@ -2112,11 +2149,15 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
 
       {sub==="litters" && <>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8}}>
-          <SubTabs tabs={[["active","Active"],["weaned","Weaned (Historical)"]]} active={litSub} onChange={setLitSub}/>
-          <button onClick={()=>setShowAddLit(true)} style={btn({background:C.pink,color:"#fff"})}><Plus size={14}/>Add Litter</button>
+          <SubTabs tabs={[["active","Active"],["weaned","Weaned (Historical)"],["deleted","Deleted"]]} active={litSub} onChange={setLitSub}/>
+          {litSub!=="deleted" && <button onClick={()=>setShowAddLit(true)} style={btn({background:C.pink,color:"#fff"})}><Plus size={14}/>Add Litter</button>}
         </div>
         {STRAINS.map(s=>{
-          const sl = litters.filter(l=>l.strain===s && (litSub==="weaned" ? l.status==="weaned" : l.status!=="weaned"));
+          const sl = litters.filter(l=>l.strain===s && (
+            litSub==="deleted" ? l.deleted :
+            litSub==="weaned"  ? l.status==="weaned" && !l.deleted :
+                                 l.status!=="weaned" && !l.deleted
+          ));
           const open = litOpen[s]!==false;
           return (
             <div key={s} style={{border:`1px solid ${C.bdr2}`,borderRadius:10,overflow:"hidden"}}>
@@ -2129,14 +2170,49 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
               </div>
               {open && (
                 sl.length===0 ? (
-                  <div style={{padding:"14px 20px",color:C.muted,fontSize:13}}>No litters recorded.</div>
+                  <div style={{padding:"14px 20px",color:C.muted,fontSize:13}}>No {litSub} litters.</div>
+                ) : litSub==="deleted" ? (
+                  <div style={{overflowX:"auto"}}>
+                    <table style={{width:"100%",borderCollapse:"collapse",tableLayout:"fixed"}}>
+                      <colgroup>
+                        <col style={{width:"11%"}}/><col style={{width:"9%"}}/><col style={{width:"9%"}}/>
+                        <col style={{width:"10%"}}/><col style={{width:"11%"}}/><col style={{width:"34%"}}/><col style={{width:"16%"}}/>
+                      </colgroup>
+                      <thead><tr>
+                        <Th>Litter ID</Th><Th>Mother</Th><Th>Father</Th>
+                        <Th>Status</Th><Th>Deleted On</Th><Th>Reason</Th><Th>Actions</Th>
+                      </tr></thead>
+                      <tbody>
+                        {sl.map(l=>{
+                          const pair = l.matingPairId ? matingPairs.find(p=>p.id===l.matingPairId) : null;
+                          const dispStatus = (l.status==="gestating" && pair?.status==="waiting") ? "waiting" : l.status;
+                          const statusColor = dispStatus==="weaned"?C.success:dispStatus==="born"?C.accent:dispStatus==="waiting"?C.muted:C.pink;
+                          return (
+                            <tr key={l.id} style={{opacity:.75}}>
+                              <Td><span style={{fontFamily:"monospace",fontWeight:700}}>{l.id}</span></Td>
+                              <Td>{(()=>{const c=getCage(l.motherCageId);return c?<><span style={{fontFamily:"monospace",color:C.pink}}>{c.dlarId||c.id}</span>{c.dlarId&&<span style={{fontSize:10,color:C.muted,marginLeft:3}}>({c.id})</span>}</>:<span style={{fontFamily:"monospace",color:C.muted}}>{l.motherCageId||"—"}</span>;})()}</Td>
+                              <Td>{(()=>{const c=getCage(l.fatherCageId);return c?<><span style={{fontFamily:"monospace",color:C.accent}}>{c.dlarId||c.id}</span>{c.dlarId&&<span style={{fontSize:10,color:C.muted,marginLeft:3}}>({c.id})</span>}</>:<span style={{fontFamily:"monospace",color:C.muted}}>{l.fatherCageId||"—"}</span>;})()}</Td>
+                              <Td><Badge label={dispStatus} color={statusColor}/></Td>
+                              <Td style={{fontFamily:"monospace",fontSize:12,color:C.muted}}>{l.deletedAt?fmt(l.deletedAt):"—"}</Td>
+                              <Td style={{fontSize:12,color:C.muted,wordBreak:"break-word"}}>{l.deletedReason||"—"}</Td>
+                              <Td>
+                                <button onClick={()=>restoreLitter(l)} style={btn({background:C.success+"22",color:C.success,fontSize:12,padding:"4px 10px"})}>
+                                  <RotateCcw size={12}/>Restore
+                                </button>
+                              </Td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
                 ) : (
                   <div style={{overflowX:"auto"}}>
                     <table style={{width:"100%",borderCollapse:"collapse",tableLayout:"fixed"}}>
                       <colgroup>
-                        <col style={{width:"12%"}}/><col style={{width:"9%"}}/><col style={{width:"9%"}}/>
-                        <col style={{width:"16%"}}/><col style={{width:"15%"}}/><col style={{width:"12%"}}/>
-                        <col style={{width:"11%"}}/><col style={{width:"16%"}}/>
+                        <col style={{width:"11%"}}/><col style={{width:"9%"}}/><col style={{width:"9%"}}/>
+                        <col style={{width:"15%"}}/><col style={{width:"13%"}}/><col style={{width:"11%"}}/>
+                        <col style={{width:"10%"}}/><col style={{width:"22%"}}/>
                       </colgroup>
                       <thead><tr>
                         <Th>Litter ID</Th><Th>Mother</Th><Th>Father</Th>
@@ -2170,9 +2246,14 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
                               </Td>
                               <Td><Badge label={dispStatus} color={statusColor}/></Td>
                               <Td>
-                                <button onClick={()=>setUpdLit(l)} style={btn({background:C.surf2,color:C.muted,fontSize:12,padding:"4px 10px"})}>
-                                  <Edit2 size={12}/>Update
-                                </button>
+                                <div style={{display:"flex",gap:5}}>
+                                  <button onClick={()=>setUpdLit(l)} style={btn({background:C.surf2,color:C.muted,fontSize:12,padding:"4px 8px"})}>
+                                    <Edit2 size={12}/>Update
+                                  </button>
+                                  <button onClick={()=>setDelLit(l)} style={btn({background:C.danger+"22",color:C.danger,fontSize:12,padding:"4px 8px"})}>
+                                    <Trash2 size={12}/>Delete
+                                  </button>
+                                </div>
                               </Td>
                             </tr>
                           );
@@ -2191,6 +2272,7 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
       {showAddLit && <AddLitterModal cages={cages} litters={litters} onClose={()=>setShowAddLit(false)} onAdd={addLitter}/>}
       {updLit     && <UpdateLitterModal litter={updLit} cages={cages} onClose={()=>setUpdLit(null)} onUpdate={saveLitter}/>}
       {editPair   && <EditPairModal pair={editPair} cages={cages} onClose={()=>setEditPair(null)} onSave={savePair}/>}
+      {delLit     && <DeleteLitterModal litter={delLit} onClose={()=>setDelLit(null)} onDelete={reason=>deleteLitter(delLit,reason)}/>}
     </div>
   );
 }
