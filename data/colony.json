@@ -514,7 +514,7 @@
         }
       ],
       "parentLitterId": null,
-      "notes": "Testing github syncing",
+      "notes": "Testing github sync",
       "createdAt": "2026-05-15",
       "activationDate": "2025-06-18",
       "deactivationDate": null,
@@ -851,10 +851,7 @@
       "numFemales": null,
       "status": "born",
       "offspringCageIds": [],
-      "notes": "",
-      "deleted": true,
-      "deletedReason": "Duplicated entry",
-      "deletedAt": "2026-05-20"
+      "notes": ""
     },
     {
       "id": "L014",
@@ -870,10 +867,7 @@
       "numFemales": null,
       "status": "gestating",
       "offspringCageIds": [],
-      "notes": "",
-      "deleted": true,
-      "deletedReason": "Duplicated record",
-      "deletedAt": "2026-05-20"
+      "notes": ""
     }
   ],
   "pairs": [
@@ -974,10 +968,10 @@
   ],
   "auditLog": [
     {
-      "id": "LOGMPEDF79P",
-      "timestamp": "2026-05-20T18:03:59.245Z",
+      "id": "LOGMPEGH70V",
+      "timestamp": "2026-05-20T19:29:31.087Z",
       "type": "cage_edited",
-      "description": "Edited cage C023 — Notes: \"—\" → \"Testing github syncing\"",
+      "description": "Edited cage C023 — Notes: \"—\" → \"Testing github sync\"",
       "cageIds": [
         "C023"
       ]
@@ -1936,5 +1930,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-05-20T18:04:11.179Z"
+  "savedAt": "2026-05-20T19:29:50.136Z"
 }
