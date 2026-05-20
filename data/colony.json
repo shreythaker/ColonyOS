@@ -1,0 +1,1931 @@
+{
+  "cages": [
+    {
+      "id": "C001",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 1,
+      "dob": "2026-01-23",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "117132",
+      "litterHistory": [],
+      "parentLitterId": "L001",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-01-23",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C002",
+      "strain": "A",
+      "sex": "M",
+      "mouseCount": 2,
+      "dob": "2026-01-23",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "117134",
+      "litterHistory": [],
+      "parentLitterId": "L001",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-01-23",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C003",
+      "strain": "A",
+      "sex": "M",
+      "mouseCount": 3,
+      "dob": "2026-01-23",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "117133",
+      "litterHistory": [],
+      "parentLitterId": "L001",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-01-23",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C004",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 0,
+      "dob": "2025-06-27",
+      "status": "euthanized",
+      "hasBreed": false,
+      "dlarId": "113002",
+      "litterHistory": [
+        {
+          "litterId": "L002",
+          "birthDate": "2026-04-05",
+          "numPups": 7
+        }
+      ],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-06-27",
+      "deactivationDate": "2026-05-09",
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C005",
+      "strain": "A",
+      "sex": "M",
+      "mouseCount": 0,
+      "dob": "2025-05-23",
+      "status": "euthanized",
+      "hasBreed": true,
+      "dlarId": "99378",
+      "litterHistory": [],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-05-23",
+      "deactivationDate": "2026-05-09",
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C006",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 3,
+      "dob": "2026-04-05",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "121660",
+      "litterHistory": [],
+      "parentLitterId": "L002",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-04-05",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C007",
+      "strain": "A",
+      "sex": "M",
+      "mouseCount": 4,
+      "dob": "2026-04-05",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "121661",
+      "litterHistory": [],
+      "parentLitterId": "L002",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-04-05",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C008",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 1,
+      "dob": "2026-01-23",
+      "status": "weaning",
+      "hasBreed": false,
+      "dlarId": "121141",
+      "litterHistory": [
+        {
+          "litterId": "L003",
+          "birthDate": "2026-05-08",
+          "numPups": null
+        },
+        {
+          "litterId": "L013",
+          "birthDate": "2026-05-08",
+          "numPups": null
+        }
+      ],
+      "parentLitterId": "L001",
+      "notes": "formerly 117132",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-01-23",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C009",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 0,
+      "dob": "2025-06-27",
+      "status": "euthanized",
+      "hasBreed": false,
+      "dlarId": "113001",
+      "litterHistory": [],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-06-27",
+      "deactivationDate": "2026-05-09",
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C010",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 0,
+      "dob": "2025-05-28",
+      "status": "euthanized",
+      "hasBreed": false,
+      "dlarId": "101848",
+      "litterHistory": [
+        {
+          "litterId": "L009",
+          "birthDate": "2026-04-10",
+          "numPups": 6
+        }
+      ],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-05-28",
+      "deactivationDate": "2026-05-09",
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C011",
+      "strain": "B",
+      "sex": "F",
+      "mouseCount": 1,
+      "dob": "2025-12-20",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "114545",
+      "litterHistory": [],
+      "parentLitterId": "L005",
+      "notes": "1 litter, ate pups 5/16",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-01-10",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C012",
+      "strain": "B",
+      "sex": "M",
+      "mouseCount": 1,
+      "dob": "2025-12-20",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "114546",
+      "litterHistory": [],
+      "parentLitterId": "L005",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-01-10",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C013",
+      "strain": "B",
+      "sex": "M",
+      "mouseCount": 1,
+      "dob": "2025-12-20",
+      "status": "active",
+      "hasBreed": true,
+      "dlarId": "120830",
+      "litterHistory": [],
+      "parentLitterId": "L005",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-01-10",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C014",
+      "strain": "B",
+      "sex": "M",
+      "mouseCount": 1,
+      "dob": "2025-11-27",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "113000",
+      "litterHistory": [],
+      "parentLitterId": "L004",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-12-18",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C015",
+      "strain": "B",
+      "sex": "M",
+      "mouseCount": 1,
+      "dob": "2025-11-27",
+      "status": "active",
+      "hasBreed": true,
+      "dlarId": "119331",
+      "litterHistory": [],
+      "parentLitterId": "L004",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-12-18",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C016",
+      "strain": "B",
+      "sex": "M",
+      "mouseCount": 1,
+      "dob": "2025-11-27",
+      "status": "active",
+      "hasBreed": true,
+      "dlarId": "119330",
+      "litterHistory": [],
+      "parentLitterId": "L004",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-12-18",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C017",
+      "strain": "B",
+      "sex": "F",
+      "mouseCount": 2,
+      "dob": "2025-11-27",
+      "status": "mating",
+      "hasBreed": false,
+      "dlarId": "112999",
+      "litterHistory": [
+        {
+          "litterId": "L006",
+          "birthDate": null,
+          "numPups": null
+        }
+      ],
+      "parentLitterId": "L004",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-12-18",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C018",
+      "strain": "B",
+      "sex": "M",
+      "mouseCount": 1,
+      "dob": "2025-08-29",
+      "status": "mating",
+      "hasBreed": true,
+      "dlarId": "106378",
+      "litterHistory": [],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-09-19",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C019",
+      "strain": "B",
+      "sex": "F",
+      "mouseCount": 1,
+      "dob": "2025-08-03",
+      "status": "mating",
+      "hasBreed": false,
+      "dlarId": "104931",
+      "litterHistory": [
+        {
+          "litterId": "L007",
+          "birthDate": null,
+          "numPups": null
+        }
+      ],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-08-24",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C020",
+      "strain": "B",
+      "sex": "M",
+      "mouseCount": 1,
+      "dob": "2025-08-29",
+      "status": "mating",
+      "hasBreed": true,
+      "dlarId": "113004",
+      "litterHistory": [],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-09-19",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C021",
+      "strain": "B",
+      "sex": "F",
+      "mouseCount": 1,
+      "dob": "2025-11-27",
+      "status": "weaning",
+      "hasBreed": false,
+      "dlarId": "120289",
+      "litterHistory": [
+        {
+          "litterId": "L012",
+          "birthDate": "2026-05-18",
+          "numPups": null
+        },
+        {
+          "litterId": "L014",
+          "birthDate": null,
+          "numPups": null
+        }
+      ],
+      "parentLitterId": "L004",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-12-18",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C022",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 1,
+      "dob": "2025-12-10",
+      "status": "mating",
+      "hasBreed": true,
+      "dlarId": "114043",
+      "litterHistory": [
+        {
+          "litterId": "L008",
+          "birthDate": "2026-04-03",
+          "numPups": 8
+        },
+        {
+          "litterId": "L011",
+          "birthDate": "2026-05-05",
+          "numPups": null
+        }
+      ],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-12-31",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C023",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 0,
+      "dob": "2025-05-28",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "101684",
+      "litterHistory": [
+        {
+          "litterId": "L010",
+          "birthDate": "2026-04-22",
+          "numPups": 6
+        }
+      ],
+      "parentLitterId": null,
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2025-06-18",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C024",
+      "strain": "AB",
+      "sex": "F",
+      "mouseCount": 4,
+      "dob": "2026-04-03",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "121623",
+      "litterHistory": [],
+      "parentLitterId": "L008",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-04-24",
+      "deactivationDate": null,
+      "experimentId": "EXP001",
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C025",
+      "strain": "AB",
+      "sex": "M",
+      "mouseCount": 4,
+      "dob": "2026-04-03",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "121624",
+      "litterHistory": [],
+      "parentLitterId": "L008",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-04-24",
+      "deactivationDate": null,
+      "experimentId": "EXP001",
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C026",
+      "strain": "AB",
+      "sex": "F",
+      "mouseCount": 4,
+      "dob": "2026-04-10",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "122325",
+      "litterHistory": [],
+      "parentLitterId": "L009",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-05-01",
+      "deactivationDate": null,
+      "experimentId": "EXP002",
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C027",
+      "strain": "AB",
+      "sex": "M",
+      "mouseCount": 2,
+      "dob": "2026-04-10",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "122326",
+      "litterHistory": [],
+      "parentLitterId": "L009",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-05-01",
+      "deactivationDate": null,
+      "experimentId": "EXP002",
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C028",
+      "strain": "AB",
+      "sex": "F",
+      "mouseCount": 3,
+      "dob": "2026-04-22",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "123255",
+      "litterHistory": [],
+      "parentLitterId": "L010",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-05-13",
+      "deactivationDate": null,
+      "experimentId": "EXP002",
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "id": "C029",
+      "strain": "AB",
+      "sex": "M",
+      "mouseCount": 3,
+      "dob": "2026-04-22",
+      "status": "active",
+      "hasBreed": false,
+      "dlarId": "123256",
+      "litterHistory": [],
+      "parentLitterId": "L010",
+      "notes": "",
+      "createdAt": "2026-05-15",
+      "activationDate": "2026-05-13",
+      "deactivationDate": null,
+      "experimentId": "EXP002",
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    }
+  ],
+  "litters": [
+    {
+      "id": "L001",
+      "strain": "A",
+      "motherCageId": null,
+      "fatherCageId": null,
+      "matingPairId": null,
+      "birthDate": "2026-01-23",
+      "weanDate": "2026-02-13",
+      "expectedBirthDate": null,
+      "numPups": 7,
+      "numMales": 5,
+      "numFemales": 2,
+      "status": "weaned",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L002",
+      "strain": "A",
+      "motherCageId": "C004",
+      "fatherCageId": "C005",
+      "matingPairId": null,
+      "birthDate": "2026-04-05",
+      "weanDate": "2026-04-26",
+      "expectedBirthDate": null,
+      "numPups": 7,
+      "numMales": 4,
+      "numFemales": 3,
+      "status": "weaned",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L003",
+      "strain": "A",
+      "motherCageId": "C008",
+      "fatherCageId": "C005",
+      "matingPairId": null,
+      "birthDate": "2026-05-08",
+      "weanDate": "2026-05-29",
+      "expectedBirthDate": "2026-05-08",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "born",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L004",
+      "strain": "B",
+      "motherCageId": null,
+      "fatherCageId": null,
+      "matingPairId": null,
+      "birthDate": "2025-11-27",
+      "weanDate": "2025-12-18",
+      "expectedBirthDate": null,
+      "numPups": 6,
+      "numMales": 3,
+      "numFemales": 3,
+      "status": "weaned",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L005",
+      "strain": "B",
+      "motherCageId": null,
+      "fatherCageId": null,
+      "matingPairId": null,
+      "birthDate": "2025-12-20",
+      "weanDate": "2026-01-10",
+      "expectedBirthDate": null,
+      "numPups": 3,
+      "numMales": 2,
+      "numFemales": 1,
+      "status": "weaned",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L006",
+      "strain": "B",
+      "motherCageId": "C017",
+      "fatherCageId": "C018",
+      "matingPairId": "MP001",
+      "birthDate": null,
+      "weanDate": null,
+      "expectedBirthDate": "2026-06-19",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "gestating",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L007",
+      "strain": "B",
+      "motherCageId": "C019",
+      "fatherCageId": "C020",
+      "matingPairId": "MP002",
+      "birthDate": null,
+      "weanDate": null,
+      "expectedBirthDate": "2026-06-19",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "gestating",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L008",
+      "strain": "AB",
+      "motherCageId": "C022",
+      "fatherCageId": "C016",
+      "matingPairId": null,
+      "birthDate": "2026-04-03",
+      "weanDate": "2026-04-24",
+      "expectedBirthDate": "2026-04-03",
+      "numPups": 8,
+      "numMales": 4,
+      "numFemales": 4,
+      "status": "weaned",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L009",
+      "strain": "AB",
+      "motherCageId": "C010",
+      "fatherCageId": "C018",
+      "matingPairId": null,
+      "birthDate": "2026-04-10",
+      "weanDate": "2026-04-10",
+      "expectedBirthDate": "2026-04-10",
+      "numPups": 6,
+      "numMales": 4,
+      "numFemales": 2,
+      "status": "weaned",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L010",
+      "strain": "AB",
+      "motherCageId": "C023",
+      "fatherCageId": "C020",
+      "matingPairId": null,
+      "birthDate": "2026-04-22",
+      "weanDate": "2026-05-13",
+      "expectedBirthDate": "2026-04-22",
+      "numPups": 6,
+      "numMales": 3,
+      "numFemales": 3,
+      "status": "weaned",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L011",
+      "strain": "AB",
+      "motherCageId": "C022",
+      "fatherCageId": "C016",
+      "matingPairId": "MP003",
+      "birthDate": "2026-05-05",
+      "weanDate": "2026-05-26",
+      "expectedBirthDate": "2026-06-19",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "born",
+      "offspringCageIds": [],
+      "notes": "Second litter from same pair, very far apart"
+    },
+    {
+      "id": "L012",
+      "strain": "B",
+      "motherCageId": "C021",
+      "fatherCageId": "C013",
+      "matingPairId": null,
+      "birthDate": "2026-05-18",
+      "weanDate": "2026-06-08",
+      "expectedBirthDate": "2026-05-29",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "born",
+      "offspringCageIds": [],
+      "notes": ""
+    },
+    {
+      "id": "L013",
+      "strain": "A",
+      "motherCageId": "C008",
+      "fatherCageId": "C005",
+      "matingPairId": null,
+      "birthDate": "2026-05-08",
+      "weanDate": "2026-05-29",
+      "expectedBirthDate": "2026-05-08",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "born",
+      "offspringCageIds": [],
+      "notes": "",
+      "deleted": true,
+      "deletedReason": "Duplicated entry",
+      "deletedAt": "2026-05-20"
+    },
+    {
+      "id": "L014",
+      "strain": "B",
+      "motherCageId": "C021",
+      "fatherCageId": "C013",
+      "matingPairId": "MP004",
+      "birthDate": null,
+      "weanDate": null,
+      "expectedBirthDate": "2026-06-24",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "gestating",
+      "offspringCageIds": [],
+      "notes": "",
+      "deleted": true,
+      "deletedReason": "Duplicated record",
+      "deletedAt": "2026-05-20"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "MP001",
+      "type": "harem",
+      "strain": "B",
+      "maleCageId": "C018",
+      "femaleCageIds": [
+        "C017"
+      ],
+      "setupDate": "2026-05-09",
+      "status": "waiting",
+      "lastStatusUpdate": "2026-05-20",
+      "litterIds": [
+        "L006"
+      ]
+    },
+    {
+      "id": "MP002",
+      "type": "pair",
+      "strain": "B",
+      "maleCageId": "C020",
+      "femaleCageIds": [
+        "C019"
+      ],
+      "setupDate": "2026-05-09",
+      "status": "waiting",
+      "lastStatusUpdate": "2026-05-20",
+      "litterIds": [
+        "L007"
+      ]
+    },
+    {
+      "id": "MP003",
+      "type": "pair",
+      "strain": "AB",
+      "maleCageId": "C016",
+      "femaleCageIds": [
+        "C022"
+      ],
+      "setupDate": "2026-04-27",
+      "status": "birthed",
+      "lastStatusUpdate": "2026-05-20",
+      "litterIds": [
+        "L011"
+      ]
+    },
+    {
+      "id": "MP004",
+      "type": "pair",
+      "strain": "B",
+      "maleCageId": "C013",
+      "femaleCageIds": [
+        "C021"
+      ],
+      "setupDate": "2026-04-11",
+      "status": "birthed",
+      "lastStatusUpdate": "2026-05-20",
+      "litterIds": [
+        "L014"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "id": "EXP001",
+      "name": "Sporadic Tumorigenesis - EWP",
+      "description": "6 weeks of EWP diet from ages 4-10 weeks. Readout: Tumor Count and Burden.",
+      "strain": "AB",
+      "targetN": 12,
+      "enrolledCageIds": [
+        "C024",
+        "C025"
+      ],
+      "startDate": "2026-05-01",
+      "endDate": null,
+      "status": "active",
+      "notes": ""
+    },
+    {
+      "id": "EXP002",
+      "name": "Sporadic Tumorigenesis - CP",
+      "description": "6 weeks of CP diet (not mineral balanced, just regular AIN-93G) from ages 4-10 weeks. Readout: Tumor Count and Burden",
+      "strain": "AB",
+      "targetN": 12,
+      "enrolledCageIds": [
+        "C026",
+        "C027",
+        "C028",
+        "C029"
+      ],
+      "startDate": "2026-05-01",
+      "endDate": null,
+      "status": "active",
+      "notes": ""
+    }
+  ],
+  "auditLog": [
+    {
+      "id": "LOGMPECTSB7",
+      "timestamp": "2026-05-20T17:47:20.083Z",
+      "type": "pair_checked",
+      "description": "Pair MP003 checked today",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMPECTA81",
+      "timestamp": "2026-05-20T17:46:56.641Z",
+      "type": "cage_edited",
+      "description": "Edited cage C013 — Status: \"Mating\" → \"Active\"",
+      "cageIds": [
+        "C013"
+      ]
+    },
+    {
+      "id": "LOGMPECSZX3",
+      "timestamp": "2026-05-20T17:46:43.287Z",
+      "type": "cage_edited",
+      "description": "Edited cage C021 — Status: \"Mating\" → \"Weaning\"",
+      "cageIds": [
+        "C021"
+      ]
+    },
+    {
+      "id": "LOGMPECSAAZ",
+      "timestamp": "2026-05-20T17:46:10.091Z",
+      "type": "cage_edited",
+      "description": "Edited cage C022 — Notes: \"Will produce ApcCdx2 cross pups. \" → \"—\"",
+      "cageIds": [
+        "C022"
+      ]
+    },
+    {
+      "id": "LOGMPE90WP4",
+      "timestamp": "2026-05-20T16:00:53.896Z",
+      "type": "cage_edited",
+      "description": "Edited cage C023 — Status: \"Euthanized\" → \"Active\"",
+      "cageIds": [
+        "C023"
+      ]
+    },
+    {
+      "id": "LOGMPE8YYK3",
+      "timestamp": "2026-05-20T15:59:22.995Z",
+      "type": "cage_edited",
+      "description": "Edited cage C005 — Deactivation Date: \"—\" → \"2026-05-09\"",
+      "cageIds": [
+        "C005"
+      ]
+    },
+    {
+      "id": "LOGMPE8YSTI",
+      "timestamp": "2026-05-20T15:59:15.558Z",
+      "type": "cage_edited",
+      "description": "Edited cage C004 — Deactivation Date: \"—\" → \"2026-05-09\"",
+      "cageIds": [
+        "C004"
+      ]
+    },
+    {
+      "id": "LOGMPE8YLDK",
+      "timestamp": "2026-05-20T15:59:05.912Z",
+      "type": "cage_edited",
+      "description": "Edited cage C010 — Deactivation Date: \"—\" → \"2026-05-09\"",
+      "cageIds": [
+        "C010"
+      ]
+    },
+    {
+      "id": "LOGMPE8YCLG",
+      "timestamp": "2026-05-20T15:58:54.532Z",
+      "type": "cage_edited",
+      "description": "Edited cage C009 — Deactivation Date: \"—\" → \"2026-05-09\"",
+      "cageIds": [
+        "C009"
+      ]
+    },
+    {
+      "id": "LOGMPE8WPTE",
+      "timestamp": "2026-05-20T15:57:38.354Z",
+      "type": "breeding_refresh",
+      "description": "Refreshed breeding status for 2 cage(s): C008, C021",
+      "cageIds": [
+        "C008",
+        "C021"
+      ]
+    },
+    {
+      "id": "LOGMPE8WGM8",
+      "timestamp": "2026-05-20T15:57:26.432Z",
+      "type": "cage_edited",
+      "description": "Edited cage C022 — Notes: \"—\" → \"Will produce ApcCdx2 cross pups. \"",
+      "cageIds": [
+        "C022"
+      ]
+    },
+    {
+      "id": "LOGMPE8UA6V",
+      "timestamp": "2026-05-20T15:55:44.791Z",
+      "type": "pair_checked",
+      "description": "Pair MP002 checked today",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMPE8U8M3",
+      "timestamp": "2026-05-20T15:55:42.747Z",
+      "type": "pair_checked",
+      "description": "Pair MP001 checked today",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMPE8TYVP",
+      "timestamp": "2026-05-20T15:55:30.133Z",
+      "type": "litter_deleted",
+      "description": "Deleted litter L014: Duplicated record",
+      "cageIds": [
+        "C021",
+        "C013"
+      ]
+    },
+    {
+      "id": "LOGMPE8TSRH",
+      "timestamp": "2026-05-20T15:55:22.205Z",
+      "type": "litter_deleted",
+      "description": "Deleted litter L013: Duplicated entry",
+      "cageIds": [
+        "C008",
+        "C005"
+      ]
+    },
+    {
+      "id": "LOGMPE8MYL3",
+      "timestamp": "2026-05-20T15:50:03.159Z",
+      "type": "litter_updated",
+      "description": "Updated litter L012 — Status: \"gestating\" → \"born\" | Birth Date: \"—\" → \"2026-05-18\" | Wean Date: \"—\" → \"2026-06-08\"",
+      "cageIds": [
+        "C021",
+        "C013"
+      ]
+    },
+    {
+      "id": "LOGMPE8K5BB",
+      "timestamp": "2026-05-20T15:47:51.911Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP004 — Setup Date: \"2026-05-20\" → \"2026-04-11\" | Status: \"waiting\" → \"birthed\"",
+      "cageIds": [
+        "C013",
+        "C021"
+      ]
+    },
+    {
+      "id": "LOGMPE8JM3A",
+      "timestamp": "2026-05-20T15:47:26.998Z",
+      "type": "pair_created",
+      "description": "Set up pair MP004 (Cdx2Cre)",
+      "cageIds": [
+        "C013",
+        "C021"
+      ]
+    },
+    {
+      "id": "LOGMPE8J8AW",
+      "timestamp": "2026-05-20T15:47:09.128Z",
+      "type": "cage_edited",
+      "description": "Edited cage C021 — Status: \"Weaning\" → \"Active\"",
+      "cageIds": [
+        "C021"
+      ]
+    },
+    {
+      "id": "LOGMPE8H7XP",
+      "timestamp": "2026-05-20T15:45:35.341Z",
+      "type": "cage_edited",
+      "description": "Edited cage C016 — Status: \"Mating\" → \"Active\"",
+      "cageIds": [
+        "C016"
+      ]
+    },
+    {
+      "id": "LOGMPE8GJF0",
+      "timestamp": "2026-05-20T15:45:03.564Z",
+      "type": "cage_edited",
+      "description": "Edited cage C021 — Status: \"Active\" → \"Weaning\"",
+      "cageIds": [
+        "C021"
+      ]
+    },
+    {
+      "id": "LOGMPE8FRRM",
+      "timestamp": "2026-05-20T15:44:27.730Z",
+      "type": "cage_edited",
+      "description": "Edited cage C015 — Proven Breeder: \"No\" → \"Yes\"",
+      "cageIds": [
+        "C015"
+      ]
+    },
+    {
+      "id": "LOGMPE8FHR3",
+      "timestamp": "2026-05-20T15:44:14.751Z",
+      "type": "cage_edited",
+      "description": "Edited cage C011 — Notes: \"—\" → \"1 litter, ate pups 5/16\"",
+      "cageIds": [
+        "C011"
+      ]
+    },
+    {
+      "id": "LOGMPE8ECSP",
+      "timestamp": "2026-05-20T15:43:21.673Z",
+      "type": "cage_edited",
+      "description": "Edited cage C008 — Status: \"Active\" → \"Weaning\"",
+      "cageIds": [
+        "C008"
+      ]
+    },
+    {
+      "id": "LOGMPE8DHDV",
+      "timestamp": "2026-05-20T15:42:40.963Z",
+      "type": "litter_updated",
+      "description": "Updated litter L013 — Status: \"weaned\" → \"born\"",
+      "cageIds": [
+        "C008",
+        "C005"
+      ]
+    },
+    {
+      "id": "LOGMPE8D3DH",
+      "timestamp": "2026-05-20T15:42:22.805Z",
+      "type": "litter_added",
+      "description": "Added litter L013 (Apcfl/fl)",
+      "cageIds": [
+        "C008",
+        "C005"
+      ]
+    }
+  ],
+  "archivedLogs": [
+    {
+      "id": "ARCMP889RD1",
+      "label": "May 16, 2026 – May 15, 2026",
+      "archivedAt": "2026-05-16T10:53:10.213Z",
+      "entries": [
+        {
+          "id": "LOGMP7X5DXS",
+          "timestamp": "2026-05-16T05:41:50.416Z",
+          "type": "pair_edited",
+          "description": "Edited pair MP001 — Type: \"Pair\" → \"Harem\"",
+          "cageIds": [
+            "C018",
+            "C017"
+          ]
+        },
+        {
+          "id": "LOGMP7X4XIZ",
+          "timestamp": "2026-05-16T05:41:29.147Z",
+          "type": "pair_edited",
+          "description": "Edited pair MP001 (no changes)",
+          "cageIds": [
+            "C018",
+            "C017"
+          ]
+        },
+        {
+          "id": "LOGMP7SZV0U",
+          "timestamp": "2026-05-16T03:45:34.158Z",
+          "type": "litter_added",
+          "description": "Added litter L012 (Cdx2Cre)",
+          "cageIds": [
+            "C021",
+            "C013"
+          ]
+        },
+        {
+          "id": "LOGMP7SZ3P9",
+          "timestamp": "2026-05-16T03:44:58.749Z",
+          "type": "cage_edited",
+          "description": "Edited cage C021 — Status: \"Pregnant\" → \"Active\"",
+          "cageIds": [
+            "C021"
+          ]
+        },
+        {
+          "id": "LOGMP7SY01D",
+          "timestamp": "2026-05-16T03:44:07.345Z",
+          "type": "cage_edited",
+          "description": "Edited cage C021 — Status: \"Active\" → \"Pregnant\"",
+          "cageIds": [
+            "C021"
+          ]
+        },
+        {
+          "id": "LOGMP7SOI6G",
+          "timestamp": "2026-05-16T03:36:44.296Z",
+          "type": "breeding_refresh",
+          "description": "Refreshed breeding status for 7 cage(s): C004, C008, C010, C017, C019, C022, C023",
+          "cageIds": [
+            "C004",
+            "C008",
+            "C010",
+            "C017",
+            "C019",
+            "C022",
+            "C023",
+            "C004",
+            "C008",
+            "C010",
+            "C017",
+            "C019",
+            "C022",
+            "C023"
+          ]
+        },
+        {
+          "id": "LOGMP75WPSQ",
+          "timestamp": "2026-05-15T16:59:16.250Z",
+          "type": "experiment_enrollment",
+          "description": "Updated enrollment for EXP002: 4 cage(s)",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP75WHKL",
+          "timestamp": "2026-05-15T16:59:05.589Z",
+          "type": "experiment_created",
+          "description": "Created experiment \"Sporadic Tumorigenesis - CP\" targeting 12 AB mice",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP75V7ST",
+          "timestamp": "2026-05-15T16:58:06.269Z",
+          "type": "experiment_enrollment",
+          "description": "Updated enrollment for EXP001: 2 cage(s)",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP75UQ1E",
+          "timestamp": "2026-05-15T16:57:43.250Z",
+          "type": "cage_added",
+          "description": "Added cage C029 (Apcfl/fl/Cdx2Cre, Male, 3 mice)",
+          "cageIds": [
+            "C029"
+          ]
+        },
+        {
+          "id": "LOGMP75TYZL",
+          "timestamp": "2026-05-15T16:57:08.193Z",
+          "type": "cage_added",
+          "description": "Added cage C028 (Apcfl/fl/Cdx2Cre, Female, 3 mice)",
+          "cageIds": [
+            "C028"
+          ]
+        },
+        {
+          "id": "LOGMP75T3ZZ",
+          "timestamp": "2026-05-15T16:56:28.031Z",
+          "type": "cage_added",
+          "description": "Added cage C027 (Apcfl/fl/Cdx2Cre, Male, 2 mice)",
+          "cageIds": [
+            "C027"
+          ]
+        },
+        {
+          "id": "LOGMP75SIRN",
+          "timestamp": "2026-05-15T16:56:00.515Z",
+          "type": "cage_added",
+          "description": "Added cage C026 (Apcfl/fl/Cdx2Cre, Female, 4 mice)",
+          "cageIds": [
+            "C026"
+          ]
+        },
+        {
+          "id": "LOGMP75S068",
+          "timestamp": "2026-05-15T16:55:36.416Z",
+          "type": "cage_added",
+          "description": "Added cage C025 (Apcfl/fl/Cdx2Cre, Male, 4 mice)",
+          "cageIds": [
+            "C025"
+          ]
+        },
+        {
+          "id": "LOGMP75REKK",
+          "timestamp": "2026-05-15T16:55:08.420Z",
+          "type": "cage_added",
+          "description": "Added cage C024 (Apcfl/fl/Cdx2Cre, Female, 4 mice)",
+          "cageIds": [
+            "C024"
+          ]
+        },
+        {
+          "id": "LOGMP75QJ7T",
+          "timestamp": "2026-05-15T16:54:27.785Z",
+          "type": "experiment_created",
+          "description": "Created experiment \"Sporadic Tumorigenesis - EWP\" targeting 12 AB mice",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP75O6A3",
+          "timestamp": "2026-05-15T16:52:37.707Z",
+          "type": "litter_updated",
+          "description": "Updated litter L011 — Status: \"gestating\" → \"born\" | Birth Date: \"—\" → \"2026-05-05\" | Wean Date: \"—\" → \"2026-05-26\"",
+          "cageIds": [
+            "C022",
+            "C016"
+          ]
+        },
+        {
+          "id": "LOGMP75NEAU",
+          "timestamp": "2026-05-15T16:52:01.446Z",
+          "type": "pair_edited",
+          "description": "Edited pair MP003 (no changes)",
+          "cageIds": [
+            "C016",
+            "C022"
+          ]
+        },
+        {
+          "id": "LOGMP75N4LA",
+          "timestamp": "2026-05-15T16:51:48.862Z",
+          "type": "pair_edited",
+          "description": "Edited pair MP003 — Setup Date: \"2026-05-15\" → \"2026-04-27\" | Status: \"pregnant\" → \"birthed\"",
+          "cageIds": [
+            "C016",
+            "C022"
+          ]
+        },
+        {
+          "id": "LOGMP75MDRD",
+          "timestamp": "2026-05-15T16:51:14.089Z",
+          "type": "pair_updated",
+          "description": "Pair MP003 status: \"waiting\" → \"pregnant\"",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP75MA8A",
+          "timestamp": "2026-05-15T16:51:09.514Z",
+          "type": "pair_created",
+          "description": "Set up pair MP003 (Apcfl/fl/Cdx2Cre)",
+          "cageIds": [
+            "C016",
+            "C022"
+          ]
+        },
+        {
+          "id": "LOGMP75L8TX",
+          "timestamp": "2026-05-15T16:50:21.045Z",
+          "type": "litter_added",
+          "description": "Added litter L010 (Apcfl/fl/Cdx2Cre)",
+          "cageIds": [
+            "C023",
+            "C020"
+          ]
+        },
+        {
+          "id": "LOGMP75JVMO",
+          "timestamp": "2026-05-15T16:49:17.280Z",
+          "type": "cage_retired",
+          "description": "Retired/euthanized cage C009",
+          "cageIds": [
+            "C009"
+          ]
+        },
+        {
+          "id": "LOGMP75JRL2",
+          "timestamp": "2026-05-15T16:49:12.038Z",
+          "type": "cage_retired",
+          "description": "Retired/euthanized cage C010",
+          "cageIds": [
+            "C010"
+          ]
+        },
+        {
+          "id": "LOGMP75JQ4H",
+          "timestamp": "2026-05-15T16:49:10.145Z",
+          "type": "cage_retired",
+          "description": "Retired/euthanized cage C023",
+          "cageIds": [
+            "C023"
+          ]
+        },
+        {
+          "id": "LOGMP75JMDP",
+          "timestamp": "2026-05-15T16:49:05.293Z",
+          "type": "cage_added",
+          "description": "Added cage C023 (Apcfl/fl, Female, 1 mice)",
+          "cageIds": [
+            "C023"
+          ]
+        },
+        {
+          "id": "LOGMP74US1B",
+          "timestamp": "2026-05-15T16:29:46.223Z",
+          "type": "litter_added",
+          "description": "Added litter L009 (Apcfl/fl/Cdx2Cre)",
+          "cageIds": [
+            "C010",
+            "C018"
+          ]
+        },
+        {
+          "id": "LOGMP74TW99",
+          "timestamp": "2026-05-15T16:29:05.037Z",
+          "type": "litter_added",
+          "description": "Added litter L008 (Apcfl/fl/Cdx2Cre)",
+          "cageIds": [
+            "C022",
+            "C016"
+          ]
+        },
+        {
+          "id": "LOGMP74NI2M",
+          "timestamp": "2026-05-15T16:24:06.718Z",
+          "type": "litter_updated",
+          "description": "Updated litter L005 — Pups: \"—\" → \"3\" | Males: \"—\" → \"2\" | Females: \"—\" → \"1\"",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP74N89O",
+          "timestamp": "2026-05-15T16:23:54.012Z",
+          "type": "litter_updated",
+          "description": "Updated litter L004 — Males: \"—\" → \"3\" | Females: \"—\" → \"3\"",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP74MFON",
+          "timestamp": "2026-05-15T16:23:16.967Z",
+          "type": "litter_updated",
+          "description": "Updated litter L003 — Status: \"gestating\" → \"born\" | Birth Date: \"—\" → \"2026-05-08\" | Wean Date: \"—\" → \"2026-05-29\"",
+          "cageIds": [
+            "C008",
+            "C005"
+          ]
+        },
+        {
+          "id": "LOGMP74L9WB",
+          "timestamp": "2026-05-15T16:22:22.811Z",
+          "type": "litter_updated",
+          "description": "Updated litter L002 — Males: \"—\" → \"4\" | Females: \"—\" → \"3\"",
+          "cageIds": [
+            "C004",
+            "C005"
+          ]
+        },
+        {
+          "id": "LOGMP74KQYO",
+          "timestamp": "2026-05-15T16:21:58.272Z",
+          "type": "litter_updated",
+          "description": "Updated litter L001 — Pups: \"6\" → \"7\" | Males: \"—\" → \"5\" | Females: \"—\" → \"2\"",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP74F2TP",
+          "timestamp": "2026-05-15T16:17:33.709Z",
+          "type": "litter_updated",
+          "description": "Updated litter L005 — Status: \"born\" → \"weaned\"",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP74EY5J",
+          "timestamp": "2026-05-15T16:17:27.655Z",
+          "type": "litter_updated",
+          "description": "Updated litter L004 — Status: \"born\" → \"weaned\"",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP74ERQ1",
+          "timestamp": "2026-05-15T16:17:19.321Z",
+          "type": "litter_updated",
+          "description": "Updated litter L002 — Status: \"born\" → \"weaned\"",
+          "cageIds": [
+            "C004",
+            "C005"
+          ]
+        },
+        {
+          "id": "LOGMP74ELKF",
+          "timestamp": "2026-05-15T16:17:11.343Z",
+          "type": "litter_updated",
+          "description": "Updated litter L001 — Status: \"born\" → \"weaned\"",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP74CX3C",
+          "timestamp": "2026-05-15T16:15:52.968Z",
+          "type": "cage_added",
+          "description": "Added cage C022 (Apcfl/fl, Female, 1 mice)",
+          "cageIds": [
+            "C022"
+          ]
+        },
+        {
+          "id": "LOGMP7496U8",
+          "timestamp": "2026-05-15T16:12:58.976Z",
+          "type": "pair_edited",
+          "description": "Edited pair MP002 — Setup Date: \"2026-05-15\" → \"2026-05-09\"",
+          "cageIds": [
+            "C020",
+            "C019"
+          ]
+        },
+        {
+          "id": "LOGMP748YIJ",
+          "timestamp": "2026-05-15T16:12:48.187Z",
+          "type": "pair_edited",
+          "description": "Edited pair MP001 — Setup Date: \"2026-05-15\" → \"2026-05-09\"",
+          "cageIds": [
+            "C018",
+            "C017"
+          ]
+        },
+        {
+          "id": "LOGMP748PJ1",
+          "timestamp": "2026-05-15T16:12:36.541Z",
+          "type": "pair_created",
+          "description": "Set up pair MP002 (Cdx2Cre)",
+          "cageIds": [
+            "C020",
+            "C019"
+          ]
+        },
+        {
+          "id": "LOGMP7486GE",
+          "timestamp": "2026-05-15T16:12:11.822Z",
+          "type": "pair_created",
+          "description": "Set up pair MP001 (Cdx2Cre)",
+          "cageIds": [
+            "C018",
+            "C017"
+          ]
+        },
+        {
+          "id": "LOGMP7463J7",
+          "timestamp": "2026-05-15T16:10:34.723Z",
+          "type": "cage_edited",
+          "description": "Edited cage C020 — Proven Breeder: \"No\" → \"Yes\"",
+          "cageIds": [
+            "C020"
+          ]
+        },
+        {
+          "id": "LOGMP745TQ6",
+          "timestamp": "2026-05-15T16:10:22.014Z",
+          "type": "cage_edited",
+          "description": "Edited cage C018 — Proven Breeder: \"No\" → \"Yes\"",
+          "cageIds": [
+            "C018"
+          ]
+        },
+        {
+          "id": "LOGMP745JH1",
+          "timestamp": "2026-05-15T16:10:08.725Z",
+          "type": "cage_added",
+          "description": "Added cage C021 (Cdx2Cre, Female, 1 mice)",
+          "cageIds": [
+            "C021"
+          ]
+        },
+        {
+          "id": "LOGMP744TAG",
+          "timestamp": "2026-05-15T16:09:34.792Z",
+          "type": "cage_added",
+          "description": "Added cage C020 (Cdx2Cre, Male, 1 mice)",
+          "cageIds": [
+            "C020"
+          ]
+        },
+        {
+          "id": "LOGMP744B85",
+          "timestamp": "2026-05-15T16:09:11.381Z",
+          "type": "cage_added",
+          "description": "Added cage C019 (Cdx2Cre, Female, 1 mice)",
+          "cageIds": [
+            "C019"
+          ]
+        },
+        {
+          "id": "LOGMP743OL7",
+          "timestamp": "2026-05-15T16:08:42.043Z",
+          "type": "cage_added",
+          "description": "Added cage C018 (Cdx2Cre, Male, 1 mice)",
+          "cageIds": [
+            "C018"
+          ]
+        },
+        {
+          "id": "LOGMP7434GV",
+          "timestamp": "2026-05-15T16:08:15.967Z",
+          "type": "cage_added",
+          "description": "Added cage C017 (Cdx2Cre, Female, 2 mice)",
+          "cageIds": [
+            "C017"
+          ]
+        },
+        {
+          "id": "LOGMP742AM0",
+          "timestamp": "2026-05-15T16:07:37.272Z",
+          "type": "cage_edited",
+          "description": "Edited cage C016 — Proven Breeder: \"No\" → \"Yes\"",
+          "cageIds": [
+            "C016"
+          ]
+        },
+        {
+          "id": "LOGMP741VL1",
+          "timestamp": "2026-05-15T16:07:17.797Z",
+          "type": "cage_added",
+          "description": "Added cage C016 (Cdx2Cre, Male, 1 mice)",
+          "cageIds": [
+            "C016"
+          ]
+        },
+        {
+          "id": "LOGMP741DHH",
+          "timestamp": "2026-05-15T16:06:54.341Z",
+          "type": "cage_added",
+          "description": "Added cage C015 (Cdx2Cre, Male, 1 mice)",
+          "cageIds": [
+            "C015"
+          ]
+        },
+        {
+          "id": "LOGMP740OP7",
+          "timestamp": "2026-05-15T16:06:22.219Z",
+          "type": "cage_added",
+          "description": "Added cage C014 (Cdx2Cre, Male, 1 mice)",
+          "cageIds": [
+            "C014"
+          ]
+        },
+        {
+          "id": "LOGMP73ZWTW",
+          "timestamp": "2026-05-15T16:05:46.100Z",
+          "type": "cage_added",
+          "description": "Added cage C013 (Cdx2Cre, Male, 1 mice)",
+          "cageIds": [
+            "C013"
+          ]
+        },
+        {
+          "id": "LOGMP73Z73I",
+          "timestamp": "2026-05-15T16:05:12.750Z",
+          "type": "cage_edited",
+          "description": "Edited cage C011 — Activation Date: \"2025-12-20\" → \"2026-01-10\"",
+          "cageIds": [
+            "C011"
+          ]
+        },
+        {
+          "id": "LOGMP73Z1XK",
+          "timestamp": "2026-05-15T16:05:06.056Z",
+          "type": "cage_added",
+          "description": "Added cage C012 (Cdx2Cre, Male, 1 mice)",
+          "cageIds": [
+            "C012"
+          ]
+        },
+        {
+          "id": "LOGMP73YCK4",
+          "timestamp": "2026-05-15T16:04:33.172Z",
+          "type": "cage_added",
+          "description": "Added cage C011 (Cdx2Cre, Female, 1 mice)",
+          "cageIds": [
+            "C011"
+          ]
+        },
+        {
+          "id": "LOGMP73XFH1",
+          "timestamp": "2026-05-15T16:03:50.293Z",
+          "type": "litter_added",
+          "description": "Added litter L005 (Cdx2Cre)",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP73WMEP",
+          "timestamp": "2026-05-15T16:03:12.625Z",
+          "type": "litter_added",
+          "description": "Added litter L004 (Cdx2Cre)",
+          "cageIds": []
+        },
+        {
+          "id": "LOGMP73ULS5",
+          "timestamp": "2026-05-15T16:01:38.501Z",
+          "type": "cage_added",
+          "description": "Added cage C010 (Apcfl/fl, Female, 1 mice)",
+          "cageIds": [
+            "C010"
+          ]
+        },
+        {
+          "id": "LOGMP73SJ7C",
+          "timestamp": "2026-05-15T16:00:01.848Z",
+          "type": "cage_edited",
+          "description": "Edited cage C005 — Proven Breeder: \"No\" → \"Yes\"",
+          "cageIds": [
+            "C005"
+          ]
+        },
+        {
+          "id": "LOGMP73SDKQ",
+          "timestamp": "2026-05-15T15:59:54.554Z",
+          "type": "cage_added",
+          "description": "Added cage C009 (Apcfl/fl, Female, 1 mice)",
+          "cageIds": [
+            "C009"
+          ]
+        },
+        {
+          "id": "LOGMP73RJGJ",
+          "timestamp": "2026-05-15T15:59:15.523Z",
+          "type": "cage_retired",
+          "description": "Retired/euthanized cage C005",
+          "cageIds": [
+            "C005"
+          ]
+        },
+        {
+          "id": "LOGMP73RI2P",
+          "timestamp": "2026-05-15T15:59:13.729Z",
+          "type": "cage_retired",
+          "description": "Retired/euthanized cage C004",
+          "cageIds": [
+            "C004"
+          ]
+        },
+        {
+          "id": "LOGMP73R5KY",
+          "timestamp": "2026-05-15T15:58:57.538Z",
+          "type": "litter_added",
+          "description": "Added litter L003 (Apcfl/fl)",
+          "cageIds": [
+            "C008",
+            "C005"
+          ]
+        },
+        {
+          "id": "LOGMP73Q0RA",
+          "timestamp": "2026-05-15T15:58:04.630Z",
+          "type": "cage_added",
+          "description": "Added cage C008 (Apcfl/fl, Female, 1 mice)",
+          "cageIds": [
+            "C008"
+          ]
+        },
+        {
+          "id": "LOGMP73P1M3",
+          "timestamp": "2026-05-15T15:57:19.083Z",
+          "type": "cage_added",
+          "description": "Added cage C007 (Apcfl/fl, Male, 4 mice)",
+          "cageIds": [
+            "C007"
+          ]
+        },
+        {
+          "id": "LOGMP73OAQM",
+          "timestamp": "2026-05-15T15:56:44.254Z",
+          "type": "cage_added",
+          "description": "Added cage C006 (Apcfl/fl, Female, 3 mice)",
+          "cageIds": [
+            "C006"
+          ]
+        },
+        {
+          "id": "LOGMP73NABZ",
+          "timestamp": "2026-05-15T15:55:57.071Z",
+          "type": "litter_added",
+          "description": "Added litter L002 (Apcfl/fl)",
+          "cageIds": [
+            "C004",
+            "C005"
+          ]
+        },
+        {
+          "id": "LOGMP73MIFR",
+          "timestamp": "2026-05-15T15:55:20.919Z",
+          "type": "cage_added",
+          "description": "Added cage C005 (Apcfl/fl, Male, 1 mice)",
+          "cageIds": [
+            "C005"
+          ]
+        },
+        {
+          "id": "LOGMP73LMGE",
+          "timestamp": "2026-05-15T15:54:39.470Z",
+          "type": "cage_unretired",
+          "description": "Unretired cage C004",
+          "cageIds": [
+            "C004"
+          ]
+        },
+        {
+          "id": "LOGMP73LE7A",
+          "timestamp": "2026-05-15T15:54:28.774Z",
+          "type": "cage_retired",
+          "description": "Retired/euthanized cage C004",
+          "cageIds": [
+            "C004"
+          ]
+        },
+        {
+          "id": "LOGMP73LB3P",
+          "timestamp": "2026-05-15T15:54:24.757Z",
+          "type": "cage_added",
+          "description": "Added cage C004 (Apcfl/fl, Female, 1 mice)",
+          "cageIds": [
+            "C004"
+          ]
+        },
+        {
+          "id": "LOGMP73JKDL",
+          "timestamp": "2026-05-15T15:53:03.465Z",
+          "type": "cage_added",
+          "description": "Added cage C003 (Apcfl/fl, Male, 3 mice)",
+          "cageIds": [
+            "C003"
+          ]
+        },
+        {
+          "id": "LOGMP73J3AI",
+          "timestamp": "2026-05-15T15:52:41.322Z",
+          "type": "cage_added",
+          "description": "Added cage C002 (Apcfl/fl, Male, 2 mice)",
+          "cageIds": [
+            "C002"
+          ]
+        },
+        {
+          "id": "LOGMP73ICXN",
+          "timestamp": "2026-05-15T15:52:07.163Z",
+          "type": "cage_added",
+          "description": "Added cage C001 (Apcfl/fl, Female, 1 mice)",
+          "cageIds": [
+            "C001"
+          ]
+        },
+        {
+          "id": "LOGMP73HAS0",
+          "timestamp": "2026-05-15T15:51:17.712Z",
+          "type": "litter_added",
+          "description": "Added litter L001 (Apcfl/fl)",
+          "cageIds": []
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "email": "",
+    "weanAlertDays": 7,
+    "ageOutWeeks": 35,
+    "minMales": 2,
+    "minFemales": 2,
+    "notifyWeaning": true,
+    "notifyAgeOut": true,
+    "notifyLowColony": true,
+    "notifyCost": false
+  },
+  "savedAt": "2026-05-20T18:03:26.291Z"
+}
