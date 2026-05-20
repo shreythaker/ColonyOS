@@ -1929,6 +1929,7 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
   const [pairOpen,setPairOpen] = useState({A:true,B:true,AB:true});
   const [litOpen,setLitOpen]   = useState({A:true,B:true,AB:true});
   const [litSub,setLitSub]     = useState("active");
+  const [pairSub,setPairSub]   = useState("active");
   const liveDate = () => { const n=new Date(); return `${n.getFullYear()}-${_p2(n.getMonth()+1)}-${_p2(n.getDate())}`; };
 
   const addPair = ({pair,litter}) => {
@@ -2004,18 +2005,19 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
   const pCol = s => ({waiting:C.muted,pregnant:C.pink,birthed:C.success,retired:C.muted})[s]||C.muted;
   const getCage = id => cages.find(c=>c.id===id);
   const STRAINS = ["A","B","AB"];
-  const PAIR_STATUSES = ["waiting","pregnant","birthed","retired"];
+  const PAIR_STATUSES = pairSub==="retired" ? ["retired"] : ["waiting","pregnant","birthed"];
 
   return (
     <div style={{padding:24,display:"flex",flexDirection:"column",gap:14}}>
       <SubTabs tabs={[["pairs","Mating Pairs"],["litters","Litters"]]} active={sub} onChange={setSub}/>
 
       {sub==="pairs" && <>
-        <div style={{display:"flex",justifyContent:"flex-end"}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8}}>
+          <SubTabs tabs={[["active","Active"],["retired","Retired"]]} active={pairSub} onChange={setPairSub}/>
           <button onClick={()=>setShowAdd(true)} style={btn({background:C.pink,color:"#fff"})}><Plus size={14}/>New Pair</button>
         </div>
         {STRAINS.map(s=>{
-          const sp = matingPairs.filter(p=>p.strain===s);
+          const sp = matingPairs.filter(p=>p.strain===s && (pairSub==="retired" ? p.status==="retired" : p.status!=="retired"));
           const open = pairOpen[s]!==false;
           return (
             <div key={s} style={{border:`1px solid ${C.bdr2}`,borderRadius:10,overflow:"hidden"}}>
@@ -2029,7 +2031,7 @@ function Breeding({cages, litters, matingPairs, setLitters, setMatingPairs, setC
               {open && (
                 <div style={{paddingBottom:12}}>
                   {sp.length===0 ? (
-                    <div style={{padding:"14px 20px",color:C.muted,fontSize:13}}>No active mating pairs.</div>
+                    <div style={{padding:"14px 20px",color:C.muted,fontSize:13}}>No {pairSub==="retired"?"retired":"active"} mating pairs.</div>
                   ) : (
                     PAIR_STATUSES.map(st=>{
                       const grp = sp.filter(p=>p.status===st);
@@ -2339,38 +2341,242 @@ function Planner({cages, matingPairs}) {
   const abW = cages.filter(c=>c.strain==="AB"&&c.status==="active")
     .filter(c=>{const w=weeksOld(c.dob);return w>=4&&w<=10;}).reduce((s,c)=>s+c.mouseCount,0);
 
-  const run = async () => {
+  const run = () => {
     setLoading(true); setResult(null);
-    const prompt = `You are a laboratory mouse colony management expert. Provide a structured breeding plan.
+    setTimeout(() => {
+      const numAB    = Math.max(1, parseInt(form.numAB) || 12);
+      const target   = new Date(form.targetDate);
+      const today    = new Date(todayStr);
+      const daysLeft = Math.round((target - today) / 86400000);
+      const wksLeft  = daysLeft / 7;
+      const WK_AB    = 11.5;  // pairing → phenotype window
+      const WK_P2    = 15.5;  // parent wean(7.5wk) + fertility(8wk)
+      const P2_MAX_AGE = 35 - WK_P2; // 19.5wk — still fertile when Phase 2 starts
 
-Experimental request: ${form.numAB} AB mice (Apcfl/fl × Cdx2Cre F1 hybrid) needed in the 4–10 week phenotype window by ${form.targetDate}.
-Additional notes: ${form.notes||"None"}
-Today: ${todayStr}
+      const addW = (base, wks) => { const d=new Date(base); d.setDate(d.getDate()+Math.round(wks*7)); return d.toISOString().split("T")[0]; };
+      const fD   = s => new Date(s).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+      const cid  = c => c.dlarId||c.id;
+      const cage = (c,role) => `${cid(c)} (${role}, ${weeksOld(c.dob)}wk${c.hasBreed?" — proven":""})`;
 
-Colony:
-- Apcfl/fl males: ${aM.map(c=>`${c.id}(${weeksOld(c.dob)}wk,bred:${c.hasBreed})`).join(", ")||"None"}
-- Apcfl/fl females: ${aF.map(c=>`${c.id}(${weeksOld(c.dob)}wk,litters:${c.litterHistory.length})`).join(", ")||"None"}
-- Cdx2Cre males: ${bM.map(c=>`${c.id}(${weeksOld(c.dob)}wk,bred:${c.hasBreed})`).join(", ")||"None"}
-- Cdx2Cre females: ${bF.map(c=>`${c.id}(${weeksOld(c.dob)}wk,litters:${c.litterHistory.length})`).join(", ")||"None"}
-- Active AB crosses: ${matingPairs.filter(p=>p.strain==="AB"&&p.status!=="retired").length}
-- AB mice in window now: ${abW}
+      const gap           = Math.max(0, numAB - abW);
+      const littersNeeded = gap > 0 ? Math.ceil(gap / 6) : 0;
 
-Parameters: mating→conception ~1.5wk; gestation 3wk; wean 3wk; phenotype 4–10wk; litter 6–8 pups; harem requires proven male; avoid sibling pairings; females fertile 8–36wk; $1/cage/day.
+      const aF_f = aF.filter(c=>{const w=weeksOld(c.dob);return w>=8&&w<35;});
+      const bM_f = bM.filter(c=>{const w=weeksOld(c.dob);return w>=8&&w<35;});
+      const aM_f = aM.filter(c=>{const w=weeksOld(c.dob);return w>=8&&w<35;});
+      const bF_f = bF.filter(c=>{const w=weeksOld(c.dob);return w>=8&&w<35;});
+      const maxDirectPairs = Math.min(aF_f.length + aM_f.length, bM_f.length + bF_f.length);
+      const needParentBreed = littersNeeded > 0 && maxDirectPairs < littersNeeded;
 
-Respond with these ### sections:
-### Gap Analysis
-### Recommended Pairings
-### Timeline (week-by-week)
-### Cost Estimate
-### Risks & Recommendations`;
+      const lines = [];
 
-    try {
-      const res = await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
-      const d = await res.json();
-      setResult(d.content?.filter(b=>b.type==="text").map(b=>b.text).join("\n")||"No response.");
-    } catch(e) { setResult("Error: "+e.message); }
-    setLoading(false);
+      // ── Gap Analysis ────────────────────────────────────────────────
+      lines.push("### Gap Analysis");
+      lines.push(`- Target: ${numAB} AB mice in the 4–10 week window by ${fD(form.targetDate)}`);
+      lines.push(`- Currently in window: ${abW} mice`);
+      lines.push(`- Gap to fill: ${gap} mice`);
+      lines.push(`- Litters needed: ${littersNeeded} (at 6–8 pups/litter)`);
+      if(needParentBreed) {
+        lines.push(`- Parent strain breeding required — AB cross postponed to Phase 2 (~Week 16)`);
+        const p2Open = addW(addW(addW(todayStr, WK_P2), 4.5), 7);
+        lines.push(`- Earliest AB mice in window: ~${fD(addW(p2Open, 4))} (${Math.round(WK_P2 + WK_AB)} weeks from today)`);
+      } else {
+        const feasible = wksLeft >= WK_AB;
+        lines.push(`- Time available: ${daysLeft} days (${wksLeft.toFixed(1)} weeks) — minimum needed: ${WK_AB} weeks`);
+        if(feasible) lines.push(`- Status: FEASIBLE — ${(wksLeft - WK_AB).toFixed(1)} week buffer`);
+        else         lines.push(`- Status: NOT FEASIBLE — ${Math.ceil(WK_AB - wksLeft)} week(s) short; start immediately or adjust target date`);
+      }
+
+      if(!needParentBreed) {
+        // ── DIRECT PLAN: enough stock for immediate AB cross ────────────
+        const useAF = aF_f.slice(0, littersNeeded);
+        const useBM = bM_f.slice(0, littersNeeded);
+        const useAM = aM_f.slice(0, Math.max(0, littersNeeded - useAF.length));
+        const useBF = bF_f.slice(0, Math.max(0, littersNeeded - useAF.length));
+        let suggested = 0;
+
+        const birthDate  = addW(todayStr, 4.5);
+        const weanDate   = addW(birthDate, 3);
+        const windowOpen = addW(weanDate, 4);
+        const windowClose= addW(weanDate, 10);
+        const feasible   = wksLeft >= WK_AB;
+
+        lines.push("");
+        lines.push("### Recommended AB Cross Pairings");
+        if(gap <= 0) {
+          lines.push(`- No new pairings needed — ${abW} mice already in window meets target`);
+        } else {
+          useAF.forEach((c,i) => { if(useBM[i]) { lines.push(`- Pair ${cage(c,"Apcfl/fl F")} × ${cage(useBM[i],"Cdx2Cre M")}`); suggested++; } });
+          useAM.forEach((c,i) => { if(useBF[i]) { lines.push(`- Pair ${cage(c,"Apcfl/fl M")} × ${cage(useBF[i],"Cdx2Cre F")}`); suggested++; } });
+          const provenBM = bM_f.filter(c=>c.hasBreed);
+          if(littersNeeded >= 3 && provenBM.length) lines.push(`- Tip: Harem with proven Cdx2Cre male(s) ${provenBM.map(cid).join(", ")} reduces cage count`);
+        }
+
+        lines.push("");
+        lines.push("### Timeline (week-by-week)");
+        lines.push(`- Today (${fD(todayStr)}): Set up ${suggested} AB cross pair(s)`);
+        lines.push(`- ~Week 1–2 (${fD(addW(todayStr,1.5))}): Expected conception`);
+        lines.push(`- ~Week 4–5 (${fD(birthDate)}): Expected births — record litter sizes`);
+        lines.push(`- ~Week 7–8 (${fD(weanDate)}): Wean pups — sex and cage AB offspring`);
+        lines.push(`- ~Week 11–12 (${fD(windowOpen)}): AB mice enter 4-week phenotype window`);
+        lines.push(`- Window closes ~${fD(windowClose)} (10 weeks of age)`);
+        if(!feasible) lines.push(`- NOTE: AB mice will be in window from ${fD(windowOpen)}${Math.ceil((new Date(windowOpen)-target)/86400000)>0?` — ${Math.ceil((new Date(windowOpen)-target)/86400000)} days after target`:" — on schedule"}`);
+
+        const pupCages  = Math.ceil((littersNeeded * 7) / 4);
+        const breedCost = suggested * Math.max(daysLeft, 0);
+        const pupCost   = pupCages * 70;
+        lines.push("");
+        lines.push("### Cost Estimate");
+        lines.push(`- Breeding cages: ${suggested} × ${Math.max(daysLeft,0)} days = $${breedCost}`);
+        lines.push(`- Offspring cages: ~${pupCages} cage(s) × 70 days = $${pupCost}`);
+        lines.push(`- Estimated total: ~$${breedCost + pupCost}`);
+
+        lines.push("");
+        lines.push("### Risks & Recommendations");
+        const agingAF = aF.filter(c=>weeksOld(c.dob)>=32);
+        const agingBM = bM.filter(c=>weeksOld(c.dob)>=32);
+        if(!feasible)      lines.push(`- CRITICAL: Target date is too soon — start immediately, plan delivery ${fD(windowOpen)}`);
+        if(agingAF.length) lines.push(`- ${agingAF.length} Apcfl/fl female(s) aging out soon (32+ wk): ${agingAF.map(cid).join(", ")}`);
+        if(agingBM.length) lines.push(`- ${agingBM.length} Cdx2Cre male(s) aging out soon (32+ wk): ${agingBM.map(cid).join(", ")}`);
+        lines.push("- Monitor litters at birth; supplement or replace if litter size < 4");
+        lines.push("- Update wean dates in the app promptly so weaning alerts fire on time");
+        lines.push("- Avoid pairing siblings from the same litter — check the Lineage tab");
+        if(form.notes) lines.push(`- Note: ${form.notes}`);
+
+      } else {
+        // ── TWO-PHASE PLAN: parent strain first, AB cross in Phase 2 ────
+        // Animals still fertile when Phase 2 starts (young enough to hold in reserve)
+        const p2_aF = aF_f.filter(c => weeksOld(c.dob) <= P2_MAX_AGE);
+        const p2_aM = aM_f.filter(c => weeksOld(c.dob) <= P2_MAX_AGE);
+        const p2_bM = bM_f.filter(c => weeksOld(c.dob) <= P2_MAX_AGE);
+        const p2_bF = bF_f.filter(c => weeksOld(c.dob) <= P2_MAX_AGE);
+        // Animals too old for Phase 2 — use them for Phase 1 parent breeding
+        const old_aF = aF_f.filter(c => weeksOld(c.dob) > P2_MAX_AGE);
+        const old_aM = aM_f.filter(c => weeksOld(c.dob) > P2_MAX_AGE);
+        const old_bM = bM_f.filter(c => weeksOld(c.dob) > P2_MAX_AGE);
+        const old_bF = bF_f.filter(c => weeksOld(c.dob) > P2_MAX_AGE);
+
+        // How many new A/B animals must Phase 1 produce for Phase 2 to have enough
+        const needNewA = Math.max(0, littersNeeded - (p2_aF.length + p2_aM.length));
+        const needNewB = Math.max(0, littersNeeded - (p2_bM.length + p2_bF.length));
+        const aaLitters = needNewA > 0 ? Math.ceil(needNewA / 3) : 0;
+        const bbLitters = needNewB > 0 ? Math.ceil(needNewB / 3) : 0;
+
+        // Phase 1 pairs: prefer "old" animals (too old for Phase 2), supplement with young if needed
+        const aaAF_use = [...old_aF, ...p2_aF].slice(0, aaLitters);
+        const aaAM_use = [...old_aM, ...p2_aM].slice(0, aaLitters);
+        const bbBM_use = [...old_bM, ...p2_bM].slice(0, bbLitters);
+        const bbBF_use = [...old_bF, ...p2_bF].slice(0, bbLitters);
+
+        // Phase 2 pool: young animals NOT consumed by Phase 1
+        const p1_AF = new Set(aaAF_use.map(c=>c.id));
+        const p1_AM = new Set(aaAM_use.map(c=>c.id));
+        const p1_BM = new Set(bbBM_use.map(c=>c.id));
+        const p1_BF = new Set(bbBF_use.map(c=>c.id));
+        const p2_avail_aF = p2_aF.filter(c=>!p1_AF.has(c.id));
+        const p2_avail_aM = p2_aM.filter(c=>!p1_AM.has(c.id));
+        const p2_avail_bM = p2_bM.filter(c=>!p1_BM.has(c.id));
+        const p2_avail_bF = p2_bF.filter(c=>!p1_BF.has(c.id));
+
+        // Phase 2 date calculations
+        const p2Start      = addW(todayStr, WK_P2);
+        const p2Birth      = addW(p2Start,  4.5);
+        const p2Wean       = addW(p2Birth,  3);
+        const p2WindowOpen = addW(p2Wean,   4);
+        const p2WindowClose= addW(p2Wean,   10);
+        const p2DaysLeft   = Math.round((target - new Date(p2Start)) / 86400000);
+        const p2Feasible   = p2DaysLeft / 7 >= WK_AB;
+
+        // ── Phase 1: Parent Strain Breeding Plan ──
+        lines.push("");
+        lines.push("### Phase 1 — Parent Strain Breeding Plan");
+        lines.push(`- Insufficient stock for all ${littersNeeded} AB cross pairs — breed up parent strain(s) first`);
+        lines.push(`- All ${littersNeeded} AB cross pairs will start together in Phase 2 (~${fD(p2Start)}) for simultaneous cohort delivery`);
+
+        if(aaLitters > 0) {
+          lines.push(`- Apcfl/fl × Apcfl/fl — need ${needNewA} new A breeder(s); set up ${aaLitters} intra-strain pair(s):`);
+          const aaP = Math.min(aaAF_use.length, aaAM_use.length);
+          for(let i=0;i<aaP;i++) lines.push(`  - ${cage(aaAM_use[i],"Apcfl/fl M")} × ${cage(aaAF_use[i],"Apcfl/fl F")}`);
+          if(aaP < aaLitters) lines.push(`  - WARNING: Only ${aaP} Apcfl/fl pair(s) available; need ${aaLitters} — acquire additional Apcfl/fl stock`);
+          const provenA = aaAM_use.filter(c=>c.hasBreed);
+          if(aaLitters >= 3 && provenA.length) lines.push(`  - Tip: Harem with proven Apcfl/fl male(s) ${provenA.map(cid).join(", ")} reduces cages`);
+        } else {
+          lines.push(`- Apcfl/fl: ${p2_avail_aF.length + p2_avail_aM.length} animal(s) reserved for Phase 2 (sufficient)`);
+        }
+
+        if(bbLitters > 0) {
+          lines.push(`- Cdx2Cre × Cdx2Cre — need ${needNewB} new B breeder(s); set up ${bbLitters} intra-strain pair(s):`);
+          const bbP = Math.min(bbBM_use.length, bbBF_use.length);
+          for(let i=0;i<bbP;i++) lines.push(`  - ${cage(bbBM_use[i],"Cdx2Cre M")} × ${cage(bbBF_use[i],"Cdx2Cre F")}`);
+          if(bbP < bbLitters) lines.push(`  - WARNING: Only ${bbP} Cdx2Cre pair(s) available; need ${bbLitters} — acquire additional Cdx2Cre stock`);
+          const provenB = bbBM_use.filter(c=>c.hasBreed);
+          if(bbLitters >= 3 && provenB.length) lines.push(`  - Tip: Harem with proven Cdx2Cre male(s) ${provenB.map(cid).join(", ")} reduces cages`);
+        } else {
+          lines.push(`- Cdx2Cre: ${p2_avail_bM.length + p2_avail_bF.length} animal(s) reserved for Phase 2 (sufficient)`);
+        }
+
+        // ── Phase 2: AB Cross Plan ──
+        lines.push("");
+        lines.push(`### Phase 2 — AB Cross Pairings (starting ~${fD(p2Start)})`);
+        lines.push(`- Set up all ${littersNeeded} AB cross pair(s) simultaneously once new breeders reach fertility`);
+        // Suggest specific Phase 2 pairs from reserved young animals (new breeders fill remainder)
+        const p2_useAF = p2_avail_aF.slice(0, littersNeeded);
+        const p2_useBM = p2_avail_bM.slice(0, littersNeeded);
+        const p2_useAM = p2_avail_aM.slice(0, Math.max(0, littersNeeded - p2_useAF.length));
+        const p2_useBF = p2_avail_bF.slice(0, Math.max(0, littersNeeded - p2_useAF.length));
+        let p2Suggested = 0;
+        p2_useAF.forEach((c,i) => { if(p2_useBM[i]) { lines.push(`- Pair ${cage(c,"Apcfl/fl F")} × ${cage(p2_useBM[i],"Cdx2Cre M")} [reserved from current stock]`); p2Suggested++; } });
+        p2_useAM.forEach((c,i) => { if(p2_useBF[i]) { lines.push(`- Pair ${cage(c,"Apcfl/fl M")} × ${cage(p2_useBF[i],"Cdx2Cre F")} [reserved from current stock]`); p2Suggested++; } });
+        const newBreedersNeeded = littersNeeded - p2Suggested;
+        if(newBreedersNeeded > 0) lines.push(`- ${newBreedersNeeded} additional pair(s) to be formed from new Phase 1 offspring (select at weaning)`);
+        const provenP2BM = p2_avail_bM.filter(c=>c.hasBreed);
+        if(littersNeeded >= 3 && provenP2BM.length) lines.push(`- Tip: Harem with proven Cdx2Cre male(s) ${provenP2BM.map(cid).join(", ")} reduces Phase 2 cage count`);
+        if(!p2Feasible) lines.push(`- NOTE: Phase 2 AB mice will enter window ~${fD(p2WindowOpen)} — ${Math.ceil((new Date(p2WindowOpen)-target)/86400000)} days after original target`);
+
+        // ── Two-Phase Timeline ──
+        lines.push("");
+        lines.push("### Two-Phase Timeline");
+        lines.push(`Phase 1 — Parent strain breeding`);
+        lines.push(`- Today (${fD(todayStr)}): Set up ${aaLitters} Apcfl/fl pair(s) + ${bbLitters} Cdx2Cre pair(s)`);
+        lines.push(`- ~Week 4–5 (${fD(addW(todayStr,4.5))}): Parent strain pups born`);
+        lines.push(`- ~Week 7–8 (${fD(addW(todayStr,7.5))}): Parent pups weaned — sex and identify future AB breeders`);
+        lines.push(`- ~Week 15–16 (${fD(p2Start)}): New breeders reach 8-week fertility`);
+        lines.push(`Phase 2 — AB cross (all ${littersNeeded} pairs set up simultaneously)`);
+        lines.push(`- ~Week 17 (${fD(addW(p2Start,1.5))}): Expected AB conception`);
+        lines.push(`- ~Week 20 (${fD(p2Birth)}): Expected AB births — record litter sizes`);
+        lines.push(`- ~Week 23 (${fD(p2Wean)}): AB pups weaned`);
+        lines.push(`- ~Week 27 (${fD(p2WindowOpen)}): AB mice enter 4–10 week phenotype window`);
+        lines.push(`- Window closes ~${fD(p2WindowClose)} — total lead time ~${Math.round(WK_P2 + WK_AB)} weeks from today`);
+
+        // ── Cost Estimate ──
+        const p1CageDays = (aaLitters + bbLitters) * Math.round(WK_P2 * 7);
+        const p2BreedDays= littersNeeded * Math.round(WK_AB * 7);
+        const pupCages   = Math.ceil((littersNeeded * 7) / 4);
+        const pupCost    = pupCages * 70;
+        lines.push("");
+        lines.push("### Cost Estimate");
+        lines.push(`- Phase 1 parent cages: ${aaLitters + bbLitters} × ${Math.round(WK_P2*7)} days = $${p1CageDays}`);
+        lines.push(`- Phase 2 breeding cages: ${littersNeeded} × ${Math.round(WK_AB*7)} days = $${p2BreedDays}`);
+        lines.push(`- Offspring cages: ~${pupCages} cage(s) × 70 days = $${pupCost}`);
+        lines.push(`- Estimated total: ~$${p1CageDays + p2BreedDays + pupCost}`);
+
+        // ── Risks ──
+        lines.push("");
+        lines.push("### Risks & Recommendations");
+        const agingAF2 = aF.filter(c=>weeksOld(c.dob)>=32);
+        const agingBM2 = bM.filter(c=>weeksOld(c.dob)>=32);
+        if(!p2Feasible) lines.push(`- AB cohort will arrive after target date — adjust experiment schedule to ~${fD(p2WindowOpen)}`);
+        if(agingAF2.length) lines.push(`- ${agingAF2.length} Apcfl/fl female(s) aging out soon (32+ wk): ${agingAF2.map(cid).join(", ")} — use for Phase 1 A×A`);
+        if(agingBM2.length) lines.push(`- ${agingBM2.length} Cdx2Cre male(s) aging out soon (32+ wk): ${agingBM2.map(cid).join(", ")} — use for Phase 1 B×B`);
+        lines.push("- Reserve young animals (≤19 wk) for Phase 2 — do not re-pair them before then");
+        lines.push("- Monitor Phase 1 litters; track sex ratio to confirm enough breeders of each sex");
+        lines.push("- Avoid pairing siblings from the same litter — check the Lineage tab");
+        if(form.notes) lines.push(`- Note: ${form.notes}`);
+      }
+
+      setResult(lines.join("\n"));
+      setLoading(false);
+    }, 50);
   };
 
   const renderMd = txt => txt.split("\n").map((line,i)=>{
@@ -2416,7 +2622,7 @@ Respond with these ### sections:
       {result && (
         <Card>
           <div style={{fontWeight:700,fontSize:13,color:C.txt,marginBottom:14,display:"flex",alignItems:"center",gap:8}}>
-            <CheckCircle2 size={14} style={{color:C.success}}/>AI Breeding Plan
+            <CheckCircle2 size={14} style={{color:C.success}}/>Breeding Plan
           </div>
           <div>{renderMd(result)}</div>
         </Card>
