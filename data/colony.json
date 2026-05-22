@@ -642,6 +642,23 @@
       "isDeleted": false,
       "deletedNote": "",
       "deletedAt": null
+    },
+    {
+      "dlarId": "99517",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 1,
+      "dob": "2025-05-28",
+      "activationDate": "2026-06-18",
+      "parentLitterId": null,
+      "notes": "",
+      "id": "C030",
+      "status": "active",
+      "hasBreed": false,
+      "litterHistory": [],
+      "createdAt": "2026-05-22",
+      "deactivationDate": null,
+      "experimentId": null
     }
   ],
   "litters": [
@@ -890,7 +907,8 @@
       "lastStatusUpdate": "2026-05-20",
       "litterIds": [
         "L006"
-      ]
+      ],
+      "notes": "Plan to separate on 5/25. Female weights are 28.3,29.8"
     },
     {
       "id": "MP002",
@@ -906,7 +924,7 @@
       "litterIds": [
         "L007"
       ],
-      "notes": "5/20 - female weight is 34.0 g, looks pregnant but observe."
+      "notes": "5/22 - female weight is 33.5 g, looks pregnant but observe. Plan to separate on 5/25"
     },
     {
       "id": "MP003",
@@ -974,6 +992,35 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMPHD927N",
+      "timestamp": "2026-05-22T20:22:31.283Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP001 — Notes: \"—\" → \"Plan to separate on 5/25. Female weights are 28.3,29.8\"",
+      "cageIds": [
+        "C018",
+        "C017"
+      ]
+    },
+    {
+      "id": "LOGMPHD8MYR",
+      "timestamp": "2026-05-22T20:22:11.523Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP002 — Notes: \"5/20 - female weight is 34.0 g, looks pregnant but observe.\" → \"5/22 - female weight is 33.5 g, looks pregnant but observe. Plan to separate on 5/25\"",
+      "cageIds": [
+        "C020",
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMPHD6OS8",
+      "timestamp": "2026-05-22T20:20:40.568Z",
+      "type": "cage_added",
+      "description": "Added cage C030 (Apcfl/fl, Female, 1 mice)",
+      "cageIds": [
+        "C030"
+      ]
+    },
     {
       "id": "LOGMPEIKQGQ",
       "timestamp": "2026-05-20T20:28:15.482Z",
@@ -1994,5 +2041,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-05-20T20:36:16.720Z"
+  "savedAt": "2026-05-22T20:33:44.955Z"
 }
