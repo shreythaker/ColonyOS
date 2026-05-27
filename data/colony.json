@@ -160,11 +160,6 @@
           "litterId": "L003",
           "birthDate": "2026-05-08",
           "numPups": null
-        },
-        {
-          "litterId": "L013",
-          "birthDate": "2026-05-08",
-          "numPups": null
         }
       ],
       "parentLitterId": "L001",
@@ -347,9 +342,9 @@
       "id": "C017",
       "strain": "B",
       "sex": "F",
-      "mouseCount": 2,
+      "mouseCount": 1,
       "dob": "2025-11-27",
-      "status": "mating",
+      "status": "pregnant",
       "hasBreed": false,
       "dlarId": "112999",
       "litterHistory": [
@@ -375,7 +370,7 @@
       "sex": "M",
       "mouseCount": 1,
       "dob": "2025-08-29",
-      "status": "mating",
+      "status": "active",
       "hasBreed": true,
       "dlarId": "106378",
       "litterHistory": [],
@@ -395,7 +390,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2025-08-03",
-      "status": "mating",
+      "status": "pregnant",
       "hasBreed": false,
       "dlarId": "104931",
       "litterHistory": [
@@ -421,7 +416,7 @@
       "sex": "M",
       "mouseCount": 1,
       "dob": "2025-08-29",
-      "status": "mating",
+      "status": "active",
       "hasBreed": true,
       "dlarId": "113004",
       "litterHistory": [],
@@ -449,11 +444,6 @@
           "litterId": "L012",
           "birthDate": "2026-05-18",
           "numPups": null
-        },
-        {
-          "litterId": "L014",
-          "birthDate": null,
-          "numPups": null
         }
       ],
       "parentLitterId": "L004",
@@ -472,7 +462,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2025-12-10",
-      "status": "mating",
+      "status": "active",
       "hasBreed": true,
       "dlarId": "114043",
       "litterHistory": [
@@ -659,6 +649,83 @@
       "createdAt": "2026-05-22",
       "deactivationDate": null,
       "experimentId": null
+    },
+    {
+      "id": "C031",
+      "strain": "B",
+      "sex": "F",
+      "mouseCount": 1,
+      "dob": "2025-11-27",
+      "status": "pregnant",
+      "hasBreed": false,
+      "dlarId": "124380",
+      "litterHistory": [
+        {
+          "litterId": "L015",
+          "birthDate": null,
+          "numPups": null
+        }
+      ],
+      "parentLitterId": "L004",
+      "notes": "Split from 112999 (C017)",
+      "createdAt": "2026-05-27",
+      "activationDate": "2026-05-27",
+      "deactivationDate": null,
+      "experimentId": null,
+      "isDeleted": false,
+      "deletedNote": "",
+      "deletedAt": null
+    },
+    {
+      "dlarId": "124381",
+      "strain": "AB",
+      "sex": "F",
+      "mouseCount": 3,
+      "dob": "2026-05-05",
+      "activationDate": "2026-05-26",
+      "parentLitterId": "L011",
+      "notes": "Plan to sacrifice at 5 wks of age.",
+      "id": "C032",
+      "status": "active",
+      "hasBreed": false,
+      "litterHistory": [],
+      "createdAt": "2026-05-27",
+      "deactivationDate": null,
+      "experimentId": null
+    },
+    {
+      "dlarId": "124383",
+      "strain": "AB",
+      "sex": "F",
+      "mouseCount": 2,
+      "dob": "2026-05-05",
+      "activationDate": "2026-05-26",
+      "parentLitterId": "L011",
+      "notes": "Plan to sacrifice at 5 wks of age.",
+      "id": "C033",
+      "status": "active",
+      "hasBreed": false,
+      "litterHistory": [],
+      "createdAt": "2026-05-27",
+      "deactivationDate": null,
+      "experimentId": null
+    },
+    {
+      "dlarId": "124382",
+      "strain": "AB",
+      "sex": "M",
+      "mouseCount": 1,
+      "dob": "2026-05-05",
+      "activationDate": "2026-05-26",
+      "parentLitterId": "L011",
+      "notes": "Plan to sacrifice at 5 wks of age.",
+      "id": "C034",
+      "status": "active",
+      "hasBreed": false,
+      "litterHistory": [],
+      "createdAt": "2026-05-27",
+      "deactivationDate": null,
+      "experimentId": null
     }
   ],
   "litters": [
@@ -831,10 +898,10 @@
       "birthDate": "2026-05-05",
       "weanDate": "2026-05-26",
       "expectedBirthDate": "2026-06-19",
-      "numPups": null,
-      "numMales": null,
-      "numFemales": null,
-      "status": "born",
+      "numPups": 6,
+      "numMales": 1,
+      "numFemales": 5,
+      "status": "weaned",
       "offspringCageIds": [],
       "notes": "Second litter from same pair, very far apart"
     },
@@ -891,24 +958,40 @@
       "deleted": true,
       "deletedReason": "duplicate entry",
       "deletedAt": "2026-05-20"
+    },
+    {
+      "id": "L015",
+      "strain": "B",
+      "motherCageId": "C031",
+      "fatherCageId": "C018",
+      "matingPairId": "MP005",
+      "birthDate": null,
+      "weanDate": null,
+      "expectedBirthDate": "2026-06-17",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "gestating",
+      "offspringCageIds": [],
+      "notes": "Auto-created from harem split"
     }
   ],
   "pairs": [
     {
       "id": "MP001",
-      "type": "harem",
+      "type": "pair",
       "strain": "B",
       "maleCageId": "C018",
       "femaleCageIds": [
         "C017"
       ],
       "setupDate": "2026-05-09",
-      "status": "waiting",
-      "lastStatusUpdate": "2026-05-20",
+      "status": "pregnant",
+      "lastStatusUpdate": "2026-05-27",
       "litterIds": [
         "L006"
       ],
-      "notes": "Plan to separate on 5/25. Female weights are 28.3,29.8"
+      "notes": "Previously a harem; converted to pair on 2026-05-27"
     },
     {
       "id": "MP002",
@@ -919,12 +1002,12 @@
         "C019"
       ],
       "setupDate": "2026-05-09",
-      "status": "waiting",
-      "lastStatusUpdate": "2026-05-20",
+      "status": "pregnant",
+      "lastStatusUpdate": "2026-05-27",
       "litterIds": [
         "L007"
       ],
-      "notes": "5/22 - female weight is 33.5 g, looks pregnant but observe. Plan to separate on 5/25"
+      "notes": "5/27 - did not appear as pregnant as before, still separated."
     },
     {
       "id": "MP003",
@@ -935,8 +1018,8 @@
         "C022"
       ],
       "setupDate": "2026-04-27",
-      "status": "birthed",
-      "lastStatusUpdate": "2026-05-20",
+      "status": "retired",
+      "lastStatusUpdate": "2026-05-27",
       "litterIds": [
         "L011"
       ]
@@ -951,9 +1034,24 @@
       ],
       "setupDate": "2026-04-11",
       "status": "birthed",
-      "lastStatusUpdate": "2026-05-20",
+      "lastStatusUpdate": "2026-05-27",
       "litterIds": [
         "L014"
+      ]
+    },
+    {
+      "id": "MP005",
+      "type": "pair",
+      "strain": "B",
+      "maleCageId": "C018",
+      "femaleCageIds": [
+        "C031"
+      ],
+      "setupDate": "2026-05-09",
+      "status": "pregnant",
+      "lastStatusUpdate": "2026-05-27",
+      "litterIds": [
+        "L015"
       ]
     }
   ],
@@ -992,6 +1090,140 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMPOB9JP3",
+      "timestamp": "2026-05-27T17:01:17.943Z",
+      "type": "cage_added",
+      "description": "Added cage C034 (Apcfl/fl/Cdx2Cre, Male, 1 mice)",
+      "cageIds": [
+        "C034"
+      ]
+    },
+    {
+      "id": "LOGMPOB90CT",
+      "timestamp": "2026-05-27T17:00:52.877Z",
+      "type": "cage_added",
+      "description": "Added cage C033 (Apcfl/fl/Cdx2Cre, Female, 2 mice)",
+      "cageIds": [
+        "C033"
+      ]
+    },
+    {
+      "id": "LOGMPOB87OQ",
+      "timestamp": "2026-05-27T17:00:15.722Z",
+      "type": "cage_added",
+      "description": "Added cage C032 (Apcfl/fl/Cdx2Cre, Female, 3 mice)",
+      "cageIds": [
+        "C032"
+      ]
+    },
+    {
+      "id": "LOGMPOB73QG",
+      "timestamp": "2026-05-27T16:59:23.944Z",
+      "type": "cage_edited",
+      "description": "Edited cage C022 — Status: \"Mating\" → \"Active\"",
+      "cageIds": [
+        "C022"
+      ]
+    },
+    {
+      "id": "LOGMPOB652D",
+      "timestamp": "2026-05-27T16:58:39.013Z",
+      "type": "breeding_refresh",
+      "description": "Refreshed breeding status for 3 cage(s): C008, C021, C031",
+      "cageIds": [
+        "C008",
+        "C021",
+        "C031"
+      ]
+    },
+    {
+      "id": "LOGMPOB5D0P",
+      "timestamp": "2026-05-27T16:58:02.665Z",
+      "type": "pair_updated",
+      "description": "Pair MP003 status: \"birthed\" → \"retired\"",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMPOB54A0",
+      "timestamp": "2026-05-27T16:57:51.336Z",
+      "type": "litter_updated",
+      "description": "Updated litter L011 — Status: \"born\" → \"weaned\" | Pups: \"—\" → \"6\" | Males: \"—\" → \"1\" | Females: \"—\" → \"5\"",
+      "cageIds": [
+        "C022",
+        "C016"
+      ]
+    },
+    {
+      "id": "LOGMPOB3MXZ",
+      "timestamp": "2026-05-27T16:56:42.215Z",
+      "type": "pair_checked",
+      "description": "Pair MP004 checked today",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMPOB370C",
+      "timestamp": "2026-05-27T16:56:21.564Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP002 — Notes: \"5/22 - female weight is 33.5 g, looks pregnant but observe. Plan to separate on 5/25\" → \"5/27 - did not appear as pregnant as before, still separated.\"",
+      "cageIds": [
+        "C020",
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMPOB1VD8",
+      "timestamp": "2026-05-27T16:55:19.820Z",
+      "type": "pair_updated",
+      "description": "Pair MP002 status: \"waiting\" → \"pregnant\"",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMPOB1NXO",
+      "timestamp": "2026-05-27T16:55:10.188Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP001 — Notes: \"Previously a harem; converted to pair on 2026-05-27 · Plan to separate on 5/25. Female weights are 28.3,29.8\" → \"Previously a harem; converted to pair on 2026-05-27\"",
+      "cageIds": [
+        "C018",
+        "C017"
+      ]
+    },
+    {
+      "id": "LOGMPOB19BO",
+      "timestamp": "2026-05-27T16:54:51.252Z",
+      "type": "pair_updated",
+      "description": "Pair MP001 status: \"waiting\" → \"pregnant\"",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMPOB0UI4",
+      "timestamp": "2026-05-27T16:54:32.044Z",
+      "type": "cage_edited",
+      "description": "Edited cage C031 — DLAR ID: \"112999\" → \"124380\" | Notes: \"Split from C017\" → \"Split from 112999 (C017)\"",
+      "cageIds": [
+        "C031"
+      ]
+    },
+    {
+      "id": "LOGMPOB02CP",
+      "timestamp": "2026-05-27T16:53:55.561Z",
+      "type": "pair_created",
+      "description": "Harem split: new pregnant pair MP005 (C031 + C018) from harem MP001; harem downgraded to pair",
+      "cageIds": [
+        "C031",
+        "C018"
+      ]
+    },
+    {
+      "id": "LOGMPOB00IZ",
+      "timestamp": "2026-05-27T16:53:53.195Z",
+      "type": "cage_split",
+      "description": "Split 1 mouse(es) from C017 → new cage C031",
+      "cageIds": [
+        "C017",
+        "C031"
+      ]
+    },
     {
       "id": "LOGMPHD927N",
       "timestamp": "2026-05-22T20:22:31.283Z",
@@ -2041,5 +2273,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-05-22T20:33:44.955Z"
+  "savedAt": "2026-05-27T17:11:08.678Z"
 }
