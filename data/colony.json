@@ -152,7 +152,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2026-01-23",
-      "status": "weaning",
+      "status": "active",
       "hasBreed": false,
       "dlarId": "121141",
       "litterHistory": [
@@ -654,9 +654,9 @@
       "id": "C031",
       "strain": "B",
       "sex": "F",
-      "mouseCount": 1,
+      "mouseCount": 0,
       "dob": "2025-11-27",
-      "status": "pregnant",
+      "status": "euthanized",
       "hasBreed": false,
       "dlarId": "124380",
       "litterHistory": [
@@ -726,6 +726,57 @@
       "createdAt": "2026-05-27",
       "deactivationDate": null,
       "experimentId": null
+    },
+    {
+      "dlarId": "124746",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 3,
+      "dob": "2026-05-08",
+      "activationDate": "2026-05-29",
+      "parentLitterId": "L003",
+      "notes": "",
+      "id": "C035",
+      "status": "active",
+      "hasBreed": false,
+      "litterHistory": [],
+      "createdAt": "2026-06-01",
+      "deactivationDate": null,
+      "experimentId": null
+    },
+    {
+      "dlarId": "124747",
+      "strain": "A",
+      "sex": "F",
+      "mouseCount": 3,
+      "dob": "2026-05-08",
+      "activationDate": "2026-05-29",
+      "parentLitterId": "L003",
+      "notes": "",
+      "id": "C036",
+      "status": "active",
+      "hasBreed": false,
+      "litterHistory": [],
+      "createdAt": "2026-06-01",
+      "deactivationDate": null,
+      "experimentId": null
+    },
+    {
+      "dlarId": "124748",
+      "strain": "A",
+      "sex": "M",
+      "mouseCount": 3,
+      "dob": "2026-05-08",
+      "activationDate": "2026-05-29",
+      "parentLitterId": "L003",
+      "notes": "",
+      "id": "C037",
+      "status": "active",
+      "hasBreed": false,
+      "litterHistory": [],
+      "createdAt": "2026-06-01",
+      "deactivationDate": null,
+      "experimentId": null
     }
   ],
   "litters": [
@@ -770,10 +821,10 @@
       "birthDate": "2026-05-08",
       "weanDate": "2026-05-29",
       "expectedBirthDate": "2026-05-08",
-      "numPups": null,
-      "numMales": null,
-      "numFemales": null,
-      "status": "born",
+      "numPups": 9,
+      "numMales": 3,
+      "numFemales": 6,
+      "status": "weaned",
       "offspringCageIds": [],
       "notes": ""
     },
@@ -973,7 +1024,10 @@
       "numFemales": null,
       "status": "gestating",
       "offspringCageIds": [],
-      "notes": "Auto-created from harem split"
+      "notes": "Auto-created from harem split",
+      "deleted": true,
+      "deletedReason": "Dystocia in mother 124380, DLAR euthanized on 6/1/2026",
+      "deletedAt": "2026-06-01"
     }
   ],
   "pairs": [
@@ -1048,11 +1102,12 @@
         "C031"
       ],
       "setupDate": "2026-05-09",
-      "status": "pregnant",
+      "status": "retired",
       "lastStatusUpdate": "2026-05-27",
       "litterIds": [
         "L015"
-      ]
+      ],
+      "notes": ""
     }
   ],
   "experiments": [
@@ -1090,6 +1145,99 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMPVONLK9",
+      "timestamp": "2026-06-01T20:50:31.785Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP005 — Status: \"pregnant\" → \"retired\"",
+      "cageIds": [
+        "C018",
+        "C031"
+      ]
+    },
+    {
+      "id": "LOGMPVOMZFK",
+      "timestamp": "2026-06-01T20:50:03.104Z",
+      "type": "litter_deleted",
+      "description": "Deleted litter L015: Dystocia in mother 124380, DLAR euthanized on 6/1/2026",
+      "cageIds": [
+        "C031",
+        "C018"
+      ]
+    },
+    {
+      "id": "LOGMPVOMAO9",
+      "timestamp": "2026-06-01T20:49:31.017Z",
+      "type": "cage_retired",
+      "description": "Retired/euthanized cage C031",
+      "cageIds": [
+        "C031"
+      ]
+    },
+    {
+      "id": "LOGMPVOLSZN",
+      "timestamp": "2026-06-01T20:49:08.099Z",
+      "type": "cage_edited",
+      "description": "Edited cage C008 — Status: \"Weaning\" → \"Active\"",
+      "cageIds": [
+        "C008"
+      ]
+    },
+    {
+      "id": "LOGMPVOL60O",
+      "timestamp": "2026-06-01T20:48:38.328Z",
+      "type": "cage_added",
+      "description": "Added cage C037 (Apcfl/fl, Male, 3 mice)",
+      "cageIds": [
+        "C037"
+      ]
+    },
+    {
+      "id": "LOGMPVOKPWM",
+      "timestamp": "2026-06-01T20:48:17.446Z",
+      "type": "cage_added",
+      "description": "Added cage C036 (Apcfl/fl, Female, 3 mice)",
+      "cageIds": [
+        "C036"
+      ]
+    },
+    {
+      "id": "LOGMPVOJT44",
+      "timestamp": "2026-06-01T20:47:34.948Z",
+      "type": "cage_added",
+      "description": "Added cage C035 (Apcfl/fl, Female, 3 mice)",
+      "cageIds": [
+        "C035"
+      ]
+    },
+    {
+      "id": "LOGMPVOII1V",
+      "timestamp": "2026-06-01T20:46:33.955Z",
+      "type": "cage_retired",
+      "description": "Retired/euthanized cage C005",
+      "cageIds": [
+        "C005"
+      ]
+    },
+    {
+      "id": "LOGMPVOI72M",
+      "timestamp": "2026-06-01T20:46:19.726Z",
+      "type": "litter_updated",
+      "description": "Updated litter L003 — Status: \"born\" → \"weaned\" | Pups: \"—\" → \"9\" | Males: \"—\" → \"3\" | Females: \"—\" → \"6\"",
+      "cageIds": [
+        "C008",
+        "C005"
+      ]
+    },
+    {
+      "id": "LOGMPVOHIIO",
+      "timestamp": "2026-06-01T20:45:47.904Z",
+      "type": "cage_unretired",
+      "description": "Unretired cage C005",
+      "cageIds": [
+        "C005"
+      ]
+    },
     {
       "id": "LOGMPOB9JP3",
       "timestamp": "2026-05-27T17:01:17.943Z",
@@ -2273,5 +2421,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-05-27T17:11:08.678Z"
+  "savedAt": "2026-06-01T21:09:25.726Z"
 }
