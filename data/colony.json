@@ -264,7 +264,7 @@
       "sex": "M",
       "mouseCount": 1,
       "dob": "2025-12-20",
-      "status": "active",
+      "status": "mating",
       "hasBreed": true,
       "dlarId": "120830",
       "litterHistory": [],
@@ -349,7 +349,7 @@
       "dlarId": "112999",
       "litterHistory": [
         {
-          "litterId": "L006",
+          "litterId": "L016",
           "birthDate": null,
           "numPups": null
         }
@@ -390,7 +390,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2025-08-03",
-      "status": "pregnant",
+      "status": "weaning",
       "hasBreed": false,
       "dlarId": "104931",
       "litterHistory": [
@@ -436,7 +436,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2025-11-27",
-      "status": "weaning",
+      "status": "mating",
       "hasBreed": false,
       "dlarId": "120289",
       "litterHistory": [
@@ -771,6 +771,23 @@
       "createdAt": "2026-06-01",
       "deactivationDate": null,
       "experimentId": null
+    },
+    {
+      "dlarId": "125450",
+      "strain": "B",
+      "sex": "M",
+      "mouseCount": 3,
+      "dob": "2026-05-18",
+      "activationDate": "2026-06-08",
+      "parentLitterId": "L012",
+      "notes": "",
+      "id": "C038",
+      "status": "active",
+      "hasBreed": false,
+      "litterHistory": [],
+      "createdAt": "2026-06-08",
+      "deactivationDate": null,
+      "experimentId": null
     }
   ],
   "litters": [
@@ -962,10 +979,10 @@
       "birthDate": "2026-05-18",
       "weanDate": "2026-06-08",
       "expectedBirthDate": "2026-05-29",
-      "numPups": null,
-      "numMales": null,
+      "numPups": 3,
+      "numMales": 3,
       "numFemales": null,
-      "status": "born",
+      "status": "weaned",
       "offspringCageIds": [],
       "notes": ""
     },
@@ -1041,6 +1058,22 @@
       "status": "gestating",
       "offspringCageIds": [],
       "notes": ""
+    },
+    {
+      "id": "L017",
+      "strain": "B",
+      "motherCageId": "C021",
+      "fatherCageId": "C013",
+      "matingPairId": "MP007",
+      "birthDate": null,
+      "weanDate": null,
+      "expectedBirthDate": "2026-07-13",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "gestating",
+      "offspringCageIds": [],
+      "notes": ""
     }
   ],
   "pairs": [
@@ -1070,11 +1103,11 @@
       ],
       "setupDate": "2026-05-09",
       "status": "pregnant",
-      "lastStatusUpdate": "2026-06-05",
+      "lastStatusUpdate": "2026-06-08",
       "litterIds": [
         "L007"
       ],
-      "notes": "5/27 - did not appear as pregnant as before, still separated."
+      "notes": "6/8: if not visibly pregnant by 6/15, then put into a new mating pair."
     },
     {
       "id": "MP003",
@@ -1100,8 +1133,8 @@
         "C021"
       ],
       "setupDate": "2026-04-11",
-      "status": "birthed",
-      "lastStatusUpdate": "2026-06-05",
+      "status": "retired",
+      "lastStatusUpdate": "2026-06-08",
       "litterIds": [
         "L014"
       ]
@@ -1133,9 +1166,24 @@
       ],
       "setupDate": "2026-06-05",
       "status": "waiting",
-      "lastStatusUpdate": "2026-06-05",
+      "lastStatusUpdate": "2026-06-08",
       "litterIds": [
         "L016"
+      ]
+    },
+    {
+      "id": "MP007",
+      "type": "pair",
+      "strain": "B",
+      "maleCageId": "C013",
+      "femaleCageIds": [
+        "C021"
+      ],
+      "setupDate": "2026-06-08",
+      "status": "waiting",
+      "lastStatusUpdate": "2026-06-08",
+      "litterIds": [
+        "L017"
       ]
     }
   ],
@@ -1174,6 +1222,89 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMQ5GF8NK",
+      "timestamp": "2026-06-08T16:57:46.640Z",
+      "type": "cage_added",
+      "description": "Added cage C038 (Cdx2Cre, Male, 3 mice)",
+      "cageIds": [
+        "C038"
+      ]
+    },
+    {
+      "id": "LOGMQ5GDMF6",
+      "timestamp": "2026-06-08T16:56:31.170Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP002 — Notes: \"5/27 - did not appear as pregnant as before, still separated.\" → \"6/8: if not visibly pregnant by 6/15, then put into a new mating pair.\"",
+      "cageIds": [
+        "C020",
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMQ5GD2K7",
+      "timestamp": "2026-06-08T16:56:05.431Z",
+      "type": "pair_updated",
+      "description": "Pair MP002 status: \"birthed\" → \"pregnant\"",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMQ5GCZ90",
+      "timestamp": "2026-06-08T16:56:01.140Z",
+      "type": "pair_updated",
+      "description": "Pair MP002 status: \"pregnant\" → \"birthed\"",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMQ5GCY7A",
+      "timestamp": "2026-06-08T16:55:59.782Z",
+      "type": "pair_checked",
+      "description": "Pair MP002 checked today",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMQ5GCUWW",
+      "timestamp": "2026-06-08T16:55:55.520Z",
+      "type": "pair_checked",
+      "description": "Pair MP006 checked today",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMQ5GCQVM",
+      "timestamp": "2026-06-08T16:55:50.290Z",
+      "type": "pair_created",
+      "description": "Set up pair MP007 (Cdx2Cre)",
+      "cageIds": [
+        "C013",
+        "C021"
+      ]
+    },
+    {
+      "id": "LOGMQ5GC6E4",
+      "timestamp": "2026-06-08T16:55:23.740Z",
+      "type": "breeding_refresh",
+      "description": "Refreshed breeding status for 1 cage(s): C017",
+      "cageIds": [
+        "C017"
+      ]
+    },
+    {
+      "id": "LOGMQ5GB0Y2",
+      "timestamp": "2026-06-08T16:54:30.026Z",
+      "type": "pair_updated",
+      "description": "Pair MP004 status: \"birthed\" → \"retired\"",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMQ5G9Z4F",
+      "timestamp": "2026-06-08T16:53:41.007Z",
+      "type": "litter_updated",
+      "description": "Updated litter L012 — Status: \"born\" → \"weaned\" | Pups: \"—\" → \"3\" | Males: \"—\" → \"3\"",
+      "cageIds": [
+        "C021",
+        "C013"
+      ]
+    },
     {
       "id": "LOGMQ1F0D0E",
       "timestamp": "2026-06-05T21:07:08.126Z",
@@ -2522,5 +2653,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-06-05T21:07:14.139Z"
+  "savedAt": "2026-06-08T16:58:11.333Z"
 }
