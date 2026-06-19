@@ -443,6 +443,11 @@
         {
           "litterId": "L012",
           "birthDate": "2026-05-18",
+          "numPups": 3
+        },
+        {
+          "litterId": "L017",
+          "birthDate": null,
           "numPups": null
         }
       ],
@@ -517,9 +522,9 @@
       "id": "C024",
       "strain": "AB",
       "sex": "F",
-      "mouseCount": 4,
+      "mouseCount": 0,
       "dob": "2026-04-03",
-      "status": "active",
+      "status": "euthanized",
       "hasBreed": false,
       "dlarId": "121623",
       "litterHistory": [],
@@ -527,7 +532,7 @@
       "notes": "",
       "createdAt": "2026-05-15",
       "activationDate": "2026-04-24",
-      "deactivationDate": null,
+      "deactivationDate": "2026-06-12",
       "experimentId": "EXP001",
       "isDeleted": false,
       "deletedNote": "",
@@ -537,9 +542,9 @@
       "id": "C025",
       "strain": "AB",
       "sex": "M",
-      "mouseCount": 4,
+      "mouseCount": 0,
       "dob": "2026-04-03",
-      "status": "active",
+      "status": "euthanized",
       "hasBreed": false,
       "dlarId": "121624",
       "litterHistory": [],
@@ -547,7 +552,7 @@
       "notes": "",
       "createdAt": "2026-05-15",
       "activationDate": "2026-04-24",
-      "deactivationDate": null,
+      "deactivationDate": "2026-06-12",
       "experimentId": "EXP001",
       "isDeleted": false,
       "deletedNote": "",
@@ -557,9 +562,9 @@
       "id": "C026",
       "strain": "AB",
       "sex": "F",
-      "mouseCount": 4,
+      "mouseCount": 0,
       "dob": "2026-04-10",
-      "status": "active",
+      "status": "euthanized",
       "hasBreed": false,
       "dlarId": "122325",
       "litterHistory": [],
@@ -567,7 +572,7 @@
       "notes": "",
       "createdAt": "2026-05-15",
       "activationDate": "2026-05-01",
-      "deactivationDate": null,
+      "deactivationDate": "2026-06-19",
       "experimentId": "EXP002",
       "isDeleted": false,
       "deletedNote": "",
@@ -577,9 +582,9 @@
       "id": "C027",
       "strain": "AB",
       "sex": "M",
-      "mouseCount": 2,
+      "mouseCount": 0,
       "dob": "2026-04-10",
-      "status": "active",
+      "status": "euthanized",
       "hasBreed": false,
       "dlarId": "122326",
       "litterHistory": [],
@@ -587,7 +592,7 @@
       "notes": "",
       "createdAt": "2026-05-15",
       "activationDate": "2026-05-01",
-      "deactivationDate": null,
+      "deactivationDate": "2026-06-19",
       "experimentId": "EXP002",
       "isDeleted": false,
       "deletedNote": "",
@@ -1222,6 +1227,78 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMQL3283U",
+      "timestamp": "2026-06-19T15:28:03.210Z",
+      "type": "cage_edited",
+      "description": "Edited cage C027 — Deactivation Date: \"—\" → \"2026-06-19\"",
+      "cageIds": [
+        "C027"
+      ]
+    },
+    {
+      "id": "LOGMQL322U3",
+      "timestamp": "2026-06-19T15:27:56.379Z",
+      "type": "cage_edited",
+      "description": "Edited cage C026 — Deactivation Date: \"—\" → \"2026-06-19\"",
+      "cageIds": [
+        "C026"
+      ]
+    },
+    {
+      "id": "LOGMQL31OGA",
+      "timestamp": "2026-06-19T15:27:37.738Z",
+      "type": "cage_retired",
+      "description": "Retired/euthanized cage C027",
+      "cageIds": [
+        "C027"
+      ]
+    },
+    {
+      "id": "LOGMQL31MF8",
+      "timestamp": "2026-06-19T15:27:35.108Z",
+      "type": "cage_retired",
+      "description": "Retired/euthanized cage C026",
+      "cageIds": [
+        "C026"
+      ]
+    },
+    {
+      "id": "LOGMQL31EQF",
+      "timestamp": "2026-06-19T15:27:25.143Z",
+      "type": "cage_edited",
+      "description": "Edited cage C025 — Deactivation Date: \"—\" → \"2026-06-12\"",
+      "cageIds": [
+        "C025"
+      ]
+    },
+    {
+      "id": "LOGMQL31A4O",
+      "timestamp": "2026-06-19T15:27:19.176Z",
+      "type": "cage_edited",
+      "description": "Edited cage C024 — Deactivation Date: \"—\" → \"2026-06-12\"",
+      "cageIds": [
+        "C024"
+      ]
+    },
+    {
+      "id": "LOGMQL312UN",
+      "timestamp": "2026-06-19T15:27:09.743Z",
+      "type": "cage_retired",
+      "description": "Retired/euthanized cage C025",
+      "cageIds": [
+        "C025"
+      ]
+    },
+    {
+      "id": "LOGMQL30Z8D",
+      "timestamp": "2026-06-19T15:27:05.053Z",
+      "type": "cage_retired",
+      "description": "Retired/euthanized cage C024",
+      "cageIds": [
+        "C024"
+      ]
+    },
     {
       "id": "LOGMQ5GF8NK",
       "timestamp": "2026-06-08T16:57:46.640Z",
@@ -2653,5 +2730,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-06-08T16:58:11.333Z"
+  "savedAt": "2026-06-19T16:19:35.868Z"
 }
