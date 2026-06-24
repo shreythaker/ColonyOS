@@ -224,7 +224,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2025-12-20",
-      "status": "mating",
+      "status": "pregnant",
       "hasBreed": false,
       "dlarId": "114545",
       "litterHistory": [],
@@ -264,7 +264,7 @@
       "sex": "M",
       "mouseCount": 1,
       "dob": "2025-12-20",
-      "status": "mating",
+      "status": "active",
       "hasBreed": true,
       "dlarId": "120830",
       "litterHistory": [],
@@ -324,7 +324,7 @@
       "sex": "M",
       "mouseCount": 1,
       "dob": "2025-11-27",
-      "status": "active",
+      "status": "mating",
       "hasBreed": true,
       "dlarId": "119330",
       "litterHistory": [],
@@ -344,7 +344,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2025-11-27",
-      "status": "mating",
+      "status": "pregnant",
       "hasBreed": false,
       "dlarId": "112999",
       "litterHistory": [
@@ -370,7 +370,7 @@
       "sex": "M",
       "mouseCount": 1,
       "dob": "2025-08-29",
-      "status": "mating",
+      "status": "active",
       "hasBreed": true,
       "dlarId": "106378",
       "litterHistory": [],
@@ -390,7 +390,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2025-08-03",
-      "status": "weaning",
+      "status": "mating",
       "hasBreed": false,
       "dlarId": "104931",
       "litterHistory": [
@@ -436,7 +436,7 @@
       "sex": "F",
       "mouseCount": 1,
       "dob": "2025-11-27",
-      "status": "mating",
+      "status": "pregnant",
       "hasBreed": false,
       "dlarId": "120289",
       "litterHistory": [
@@ -909,7 +909,10 @@
       "numFemales": null,
       "status": "gestating",
       "offspringCageIds": [],
-      "notes": ""
+      "notes": "",
+      "deleted": true,
+      "deletedReason": "No litter produced",
+      "deletedAt": "2026-06-24"
     },
     {
       "id": "L008",
@@ -1079,6 +1082,22 @@
       "status": "gestating",
       "offspringCageIds": [],
       "notes": ""
+    },
+    {
+      "id": "L018",
+      "strain": "B",
+      "motherCageId": "C019",
+      "fatherCageId": "C016",
+      "matingPairId": "MP008",
+      "birthDate": null,
+      "weanDate": null,
+      "expectedBirthDate": "2026-07-29",
+      "numPups": null,
+      "numMales": null,
+      "numFemales": null,
+      "status": "gestating",
+      "offspringCageIds": [],
+      "notes": ""
     }
   ],
   "pairs": [
@@ -1107,7 +1126,7 @@
         "C019"
       ],
       "setupDate": "2026-05-09",
-      "status": "pregnant",
+      "status": "retired",
       "lastStatusUpdate": "2026-06-08",
       "litterIds": [
         "L007"
@@ -1170,8 +1189,8 @@
         "C011"
       ],
       "setupDate": "2026-06-05",
-      "status": "waiting",
-      "lastStatusUpdate": "2026-06-08",
+      "status": "pregnant",
+      "lastStatusUpdate": "2026-06-24",
       "litterIds": [
         "L016"
       ]
@@ -1185,11 +1204,27 @@
         "C021"
       ],
       "setupDate": "2026-06-08",
-      "status": "waiting",
-      "lastStatusUpdate": "2026-06-08",
+      "status": "pregnant",
+      "lastStatusUpdate": "2026-06-24",
       "litterIds": [
         "L017"
       ]
+    },
+    {
+      "id": "MP008",
+      "type": "pair",
+      "strain": "B",
+      "maleCageId": "C016",
+      "femaleCageIds": [
+        "C019"
+      ],
+      "setupDate": "2026-06-15",
+      "status": "waiting",
+      "lastStatusUpdate": "2026-06-24",
+      "litterIds": [
+        "L018"
+      ],
+      "notes": ""
     }
   ],
   "experiments": [
@@ -1227,6 +1262,78 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMQSFRPIC",
+      "timestamp": "2026-06-24T18:58:10.788Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP008 — Setup Date: \"2026-06-24\" → \"2026-06-15\"",
+      "cageIds": [
+        "C016",
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMQSFRFR3",
+      "timestamp": "2026-06-24T18:57:58.143Z",
+      "type": "pair_created",
+      "description": "Set up pair MP008 (Cdx2Cre)",
+      "cageIds": [
+        "C016",
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMQSFQEEP",
+      "timestamp": "2026-06-24T18:57:09.745Z",
+      "type": "cage_edited",
+      "description": "Edited cage C019 — Status: \"Mating\" → \"Active\"",
+      "cageIds": [
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMQSFQ8EK",
+      "timestamp": "2026-06-24T18:57:01.964Z",
+      "type": "cage_edited",
+      "description": "Edited cage C019 — Status: \"Weaning\" → \"Mating\"",
+      "cageIds": [
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMQSFPDLL",
+      "timestamp": "2026-06-24T18:56:22.041Z",
+      "type": "litter_deleted",
+      "description": "Deleted litter L007: No litter produced",
+      "cageIds": [
+        "C019",
+        "C020"
+      ]
+    },
+    {
+      "id": "LOGMQSFONF6",
+      "timestamp": "2026-06-24T18:55:48.114Z",
+      "type": "pair_updated",
+      "description": "Pair MP007 status: \"waiting\" → \"pregnant\"",
+      "cageIds": []
+    },
+    {
+      "id": "LOGMQSFOKAE",
+      "timestamp": "2026-06-24T18:55:44.054Z",
+      "type": "pair_edited",
+      "description": "Edited pair MP002 — Status: \"pregnant\" → \"retired\"",
+      "cageIds": [
+        "C020",
+        "C019"
+      ]
+    },
+    {
+      "id": "LOGMQSFNYPV",
+      "timestamp": "2026-06-24T18:55:16.099Z",
+      "type": "pair_updated",
+      "description": "Pair MP006 status: \"waiting\" → \"pregnant\"",
+      "cageIds": []
+    },
     {
       "id": "LOGMQL3283U",
       "timestamp": "2026-06-19T15:28:03.210Z",
@@ -2730,5 +2837,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-06-19T16:19:35.868Z"
+  "savedAt": "2026-06-24T18:59:38.296Z"
 }
