@@ -395,7 +395,7 @@
       "dlarId": "104931",
       "litterHistory": [
         {
-          "litterId": "L007",
+          "litterId": "L018",
           "birthDate": null,
           "numPups": null
         }
@@ -1262,6 +1262,15 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMQSFU1W4",
+      "timestamp": "2026-06-24T19:00:00.148Z",
+      "type": "breeding_refresh",
+      "description": "Refreshed breeding status for 1 cage(s): C019",
+      "cageIds": [
+        "C019"
+      ]
+    },
     {
       "id": "LOGMQSFRPIC",
       "timestamp": "2026-06-24T18:58:10.788Z",
@@ -2837,5 +2846,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-06-24T18:59:38.296Z"
+  "savedAt": "2026-06-26T17:13:29.389Z"
 }
