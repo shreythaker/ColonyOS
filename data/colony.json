@@ -11,7 +11,7 @@
       "dlarId": "117132",
       "litterHistory": [],
       "parentLitterId": "L001",
-      "notes": "",
+      "notes": "6/30/26 - Eye Issue noted by DLAR",
       "createdAt": "2026-05-15",
       "activationDate": "2026-01-23",
       "deactivationDate": null,
@@ -1262,6 +1262,15 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "LOGMR0YGFVF",
+      "timestamp": "2026-06-30T18:03:27.195Z",
+      "type": "cage_edited",
+      "description": "Edited cage C001 — Notes: \"—\" → \"6/30/26 - Eye Issue noted by DLAR\"",
+      "cageIds": [
+        "C001"
+      ]
+    },
     {
       "id": "LOGMQSFU1W4",
       "timestamp": "2026-06-24T19:00:00.148Z",
@@ -2846,5 +2855,5 @@
     "notifyLowColony": true,
     "notifyCost": false
   },
-  "savedAt": "2026-06-26T17:13:29.389Z"
+  "savedAt": "2026-06-30T18:03:30.350Z"
 }
